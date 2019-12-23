@@ -95,13 +95,14 @@ namespace PinnacleClasses.Tasks
 
 
 
-                //Dictionary<string, decimal> computedPricesDict = this.GetCoefsFromApi(oddEvent);
+                Dictionary<string, decimal> computedPricesDict = this.GetCoefsFromApi(oddEvent);
+
+                if (computedPricesDict != null)
+                {
 
 
-               
-                
-                    //this._pricesFromPythonApiConverter.ConvertPrices(computedPricesDict, oddEvent);
-                    //convertedPrices.Add(this._pricesToDatabaseConverter.ConvertPinnacleEventToDatabasePrices(oddEvent));
+                    this._pricesFromPythonApiConverter.ConvertPrices(computedPricesDict, oddEvent);
+                    convertedPrices.Add(this._pricesToDatabaseConverter.ConvertPinnacleEventToDatabasePrices(oddEvent));
 
 
 
@@ -109,15 +110,16 @@ namespace PinnacleClasses.Tasks
                     EventLiveIdsListSinglton.AddId(eventId);
 
 
-                
+
+                }
             }
 
 
-            //this._context.Prices.AddRange(convertedPrices);
-            //this._context.SaveChanges();
+            this._context.Prices.AddRange(convertedPrices);
+            this._context.SaveChanges();
 
 
-            //this._context.Dispose();
+            this._context.Dispose();
 
 
 
