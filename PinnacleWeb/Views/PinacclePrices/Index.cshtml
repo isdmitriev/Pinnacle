@@ -1,0 +1,3225 @@
+﻿@model IEnumerable<PinnacleClasses.DatabaseObjects.PinacclePrices>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css" />
+<script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+@*<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.flash.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"></script>*@
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+    
+        $('#il').DataTable({
+            select: true, paging: true
+        });
+
+
+
+    });
+
+
+
+
+</script>
+
+
+<h2>PinnaclePrices</h2>
+
+
+<table class="table" id="il">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EventId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateAdded)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsLive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HomeTeam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AwayTeam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DRAW)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DRAW_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DRAW_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOMEAWAY)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOMEDRAW)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DRAWAWAY)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOMEAWAY_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOMEDRAW_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DRAWAWAY_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOMEAWAY_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOMEDRAW_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DRAWAWAY_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_0_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_0_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_0_5_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_0_5_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_0_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_0_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_0_75)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_0_75)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_0_75_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_0_75_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_0_75_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_0_75_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_1_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_1_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_1_0_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_1_0_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_1_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_1_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_1_25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_1_25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_1_25_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_1_25_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_1_25_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_1_25_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_1_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_1_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_1_5_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_1_5_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_1_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_1_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_1_75)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_1_75)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_1_75_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_1_75_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_1_75_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_1_75_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_2_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_2_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_2_0_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_2_0_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_2_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_2_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_2_25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_2_25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_2_25_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_2_25_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_2_25_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_2_25_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_2_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_2_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_2_5_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_2_5_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_2_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_2_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_2_75)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_2_75)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_2_75_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_2_75_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_2_75_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_2_75_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_3_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_3_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_3_0_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_3_0_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_3_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_3_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_3_25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_3_25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_3_25_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_3_25_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_3_25_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_3_25_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_3_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_3_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_3_5_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_3_5_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_3_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_3_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_3_75)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_3_75)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_3_75_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_3_75_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_3_75_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_3_75_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_4_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_4_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_4_0_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_4_0_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_4_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_4_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_4_25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_4_25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_4_25_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_4_25_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_4_25_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_4_25_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_4_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_4_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_4_5_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_4_5_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_4_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_4_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_4_75)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_4_75)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_4_75_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_4_75_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_4_75_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_4_75_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_5_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_5_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_5_0_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_5_0_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_5_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_5_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_5_25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_5_25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_5_25_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_5_25_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_5_25_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_5_25_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_5_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_5_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_5_5_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_5_5_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_5_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_5_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_5_75)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_5_75)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_5_75_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_5_75_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_5_75_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_5_75_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_6_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_6_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_6_0_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_6_0_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_6_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_6_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_6_25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_6_25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_6_25_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_6_25_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_6_25_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_6_25_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_6_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_6_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_6_5_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_6_5_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TO_6_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TU_6_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_0_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_0_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_0_5_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_0_5_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_0_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_0_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_0_75)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_0_75)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_0_75_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_0_75_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_0_75_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_0_75_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_1_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_1_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_1_0_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_1_0_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_1_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_1_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_1_25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_1_25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_1_25_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_1_25_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_1_25_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_1_25_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_1_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_1_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_1_5_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_1_5_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_1_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_1_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_1_75)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_1_75)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_1_75_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_1_75_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_1_75_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_1_75_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_2_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_2_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_2_0_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_2_0_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_2_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_2_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_2_25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_2_25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_2_25_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_2_25_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_2_25_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_2_25_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_2_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_2_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_2_5_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_2_5_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_2_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_2_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_2_75)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_2_75)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_2_75_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_2_75_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_2_75_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_2_75_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_3_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_3_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_3_0_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_3_0_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_3_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_3_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_3_25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_3_25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_3_25_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_3_25_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_3_25_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_3_25_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_3_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_3_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_3_5_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_3_5_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_3_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_3_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_3_75)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_3_75)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_3_75_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_3_75_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_3_75_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_3_75_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_4_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_4_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_4_0_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_4_0_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_4_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_4_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_4_25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_4_25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_4_25_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_4_25_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_4_25_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_4_25_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_4_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_4_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_4_5_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_4_5_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1O_4_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T1U_4_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_0_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_0_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_0_5_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_0_5_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_0_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_0_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_0_75)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_0_75)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_0_75_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_0_75_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_0_75_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_0_75_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_1_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_1_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_1_0_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_1_0_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_1_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_1_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_1_25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_1_25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_1_25_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_1_25_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_1_25_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_1_25_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_1_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_1_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_1_5_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_1_5_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_1_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_1_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_1_75)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_1_75)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_1_75_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_1_75_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_1_75_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_1_75_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_2_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_2_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_2_0_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_2_0_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_2_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_2_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_2_25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_2_25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_2_25_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_2_25_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_2_25_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_2_25_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_2_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_2_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_2_5_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_2_5_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_2_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_2_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_2_75)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_2_75)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_2_75_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_2_75_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_2_75_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_2_75_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_3_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_3_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_3_0_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_3_0_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_3_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_3_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_3_25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_3_25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_3_25_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_3_25_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_3_25_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_3_25_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_3_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_3_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_3_5_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_3_5_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_3_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_3_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_3_75)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_3_75)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_3_75_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_3_75_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_3_75_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_3_75_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_4_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_4_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_4_0_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_4_0_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_4_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_4_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_4_25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_4_25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_4_25_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_4_25_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_4_25_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_4_25_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_4_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_4_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_4_5_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_4_5_computed_)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2O_4_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T2U_4_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP_3_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP__3_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP_3_5_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP__3_5_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP_3_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP__3_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP_3_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP__3_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP_3_0_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP__3_0_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP_3_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP__3_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP_2_75)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP__2_75)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP_2_75_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP__2_75_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP_2_75_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP__2_75_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP_2_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP__2_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP_2_5_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP__2_5_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP_2_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP__2_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP_2_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP__2_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP_2_0_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP__2_0_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP_2_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP__2_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP_1_75)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP__1_75)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP_1_75_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP__1_75_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP_1_75_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP__1_75_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP_1_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP__1_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP_1_5_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP__1_5_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP_1_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP__1_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP_1_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP__1_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP_1_0_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP__1_0_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP_1_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP__1_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP_0_75)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP__0_75)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP_0_75_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP__0_75_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP_0_75_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP__0_75_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP_0_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP__0_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP_0_5_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP__0_5_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP_0_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP__0_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP_0_25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP__0_25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP_0_25_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP__0_25_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP_0_25_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP__0_25_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP_0_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_0_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP_0_0_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_0_0_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP_0_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_0_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP__0_25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_0_25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP__0_25_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_0_25_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP__0_25_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_0_25_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP__0_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_0_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP__0_5_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_0_5_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP__0_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_0_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP__0_75)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_0_75)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP__0_75_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_0_75_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP__0_75_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_0_75_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP__1_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_1_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP__1_0_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_1_0_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP__1_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_1_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP__1_25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_1_25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP__1_25_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_1_25_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP__1_25_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_1_25_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP__1_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_1_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP__1_5_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_1_5_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP__1_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_1_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP__2_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_2_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP__2_0_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_2_0_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP__2_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_2_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP__2_25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_2_25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP__2_25_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_2_25_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP__2_25_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_2_25_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP__2_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_2_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP__2_5_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_2_5_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP__2_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_2_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP__2_75)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_2_75)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP__2_75_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_2_75_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP__2_75_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_2_75_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP__3_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_3_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP__3_0_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_3_0_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP__3_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_3_0_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP__3_25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_3_25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP__3_25_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_3_25_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP__3_25_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_3_25_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP__3_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_3_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP__3_5_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_3_5_computed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HOME_HDP__3_5_disc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AWAY_HDP_3_5_disc)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateAdded)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsLive)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HomeTeam)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AwayTeam)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DRAW)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DRAW_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DRAW_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOMEAWAY)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOMEDRAW)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DRAWAWAY)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOMEAWAY_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOMEDRAW_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DRAWAWAY_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOMEAWAY_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOMEDRAW_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DRAWAWAY_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_0_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_0_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_0_5_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_0_5_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_0_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_0_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_0_75)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_0_75)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_0_75_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_0_75_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_0_75_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_0_75_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_1_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_1_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_1_0_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_1_0_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_1_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_1_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_1_25)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_1_25)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_1_25_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_1_25_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_1_25_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_1_25_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_1_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_1_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_1_5_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_1_5_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_1_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_1_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_1_75)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_1_75)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_1_75_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_1_75_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_1_75_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_1_75_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_2_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_2_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_2_0_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_2_0_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_2_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_2_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_2_25)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_2_25)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_2_25_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_2_25_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_2_25_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_2_25_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_2_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_2_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_2_5_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_2_5_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_2_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_2_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_2_75)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_2_75)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_2_75_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_2_75_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_2_75_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_2_75_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_3_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_3_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_3_0_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_3_0_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_3_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_3_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_3_25)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_3_25)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_3_25_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_3_25_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_3_25_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_3_25_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_3_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_3_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_3_5_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_3_5_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_3_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_3_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_3_75)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_3_75)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_3_75_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_3_75_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_3_75_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_3_75_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_4_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_4_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_4_0_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_4_0_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_4_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_4_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_4_25)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_4_25)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_4_25_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_4_25_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_4_25_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_4_25_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_4_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_4_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_4_5_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_4_5_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_4_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_4_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_4_75)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_4_75)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_4_75_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_4_75_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_4_75_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_4_75_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_5_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_5_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_5_0_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_5_0_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_5_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_5_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_5_25)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_5_25)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_5_25_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_5_25_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_5_25_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_5_25_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_5_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_5_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_5_5_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_5_5_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_5_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_5_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_5_75)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_5_75)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_5_75_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_5_75_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_5_75_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_5_75_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_6_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_6_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_6_0_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_6_0_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_6_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_6_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_6_25)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_6_25)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_6_25_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_6_25_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_6_25_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_6_25_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_6_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_6_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_6_5_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_6_5_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TO_6_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TU_6_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_0_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_0_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_0_5_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_0_5_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_0_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_0_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_0_75)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_0_75)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_0_75_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_0_75_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_0_75_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_0_75_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_1_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_1_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_1_0_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_1_0_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_1_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_1_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_1_25)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_1_25)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_1_25_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_1_25_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_1_25_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_1_25_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_1_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_1_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_1_5_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_1_5_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_1_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_1_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_1_75)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_1_75)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_1_75_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_1_75_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_1_75_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_1_75_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_2_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_2_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_2_0_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_2_0_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_2_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_2_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_2_25)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_2_25)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_2_25_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_2_25_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_2_25_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_2_25_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_2_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_2_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_2_5_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_2_5_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_2_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_2_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_2_75)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_2_75)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_2_75_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_2_75_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_2_75_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_2_75_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_3_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_3_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_3_0_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_3_0_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_3_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_3_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_3_25)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_3_25)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_3_25_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_3_25_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_3_25_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_3_25_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_3_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_3_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_3_5_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_3_5_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_3_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_3_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_3_75)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_3_75)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_3_75_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_3_75_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_3_75_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_3_75_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_4_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_4_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_4_0_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_4_0_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_4_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_4_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_4_25)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_4_25)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_4_25_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_4_25_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_4_25_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_4_25_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_4_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_4_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_4_5_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_4_5_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1O_4_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T1U_4_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_0_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_0_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_0_5_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_0_5_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_0_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_0_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_0_75)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_0_75)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_0_75_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_0_75_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_0_75_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_0_75_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_1_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_1_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_1_0_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_1_0_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_1_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_1_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_1_25)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_1_25)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_1_25_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_1_25_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_1_25_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_1_25_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_1_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_1_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_1_5_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_1_5_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_1_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_1_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_1_75)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_1_75)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_1_75_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_1_75_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_1_75_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_1_75_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_2_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_2_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_2_0_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_2_0_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_2_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_2_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_2_25)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_2_25)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_2_25_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_2_25_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_2_25_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_2_25_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_2_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_2_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_2_5_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_2_5_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_2_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_2_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_2_75)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_2_75)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_2_75_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_2_75_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_2_75_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_2_75_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_3_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_3_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_3_0_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_3_0_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_3_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_3_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_3_25)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_3_25)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_3_25_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_3_25_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_3_25_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_3_25_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_3_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_3_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_3_5_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_3_5_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_3_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_3_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_3_75)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_3_75)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_3_75_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_3_75_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_3_75_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_3_75_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_4_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_4_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_4_0_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_4_0_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_4_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_4_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_4_25)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_4_25)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_4_25_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_4_25_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_4_25_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_4_25_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_4_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_4_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_4_5_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_4_5_computed_)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2O_4_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.T2U_4_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP_3_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP__3_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP_3_5_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP__3_5_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP_3_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP__3_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP_3_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP__3_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP_3_0_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP__3_0_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP_3_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP__3_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP_2_75)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP__2_75)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP_2_75_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP__2_75_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP_2_75_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP__2_75_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP_2_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP__2_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP_2_5_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP__2_5_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP_2_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP__2_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP_2_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP__2_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP_2_0_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP__2_0_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP_2_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP__2_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP_1_75)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP__1_75)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP_1_75_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP__1_75_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP_1_75_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP__1_75_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP_1_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP__1_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP_1_5_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP__1_5_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP_1_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP__1_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP_1_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP__1_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP_1_0_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP__1_0_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP_1_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP__1_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP_0_75)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP__0_75)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP_0_75_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP__0_75_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP_0_75_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP__0_75_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP_0_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP__0_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP_0_5_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP__0_5_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP_0_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP__0_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP_0_25)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP__0_25)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP_0_25_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP__0_25_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP_0_25_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP__0_25_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP_0_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_0_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP_0_0_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_0_0_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP_0_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_0_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP__0_25)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_0_25)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP__0_25_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_0_25_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP__0_25_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_0_25_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP__0_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_0_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP__0_5_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_0_5_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP__0_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_0_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP__0_75)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_0_75)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP__0_75_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_0_75_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP__0_75_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_0_75_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP__1_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_1_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP__1_0_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_1_0_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP__1_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_1_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP__1_25)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_1_25)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP__1_25_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_1_25_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP__1_25_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_1_25_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP__1_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_1_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP__1_5_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_1_5_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP__1_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_1_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP__2_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_2_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP__2_0_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_2_0_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP__2_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_2_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP__2_25)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_2_25)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP__2_25_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_2_25_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP__2_25_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_2_25_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP__2_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_2_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP__2_5_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_2_5_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP__2_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_2_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP__2_75)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_2_75)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP__2_75_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_2_75_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP__2_75_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_2_75_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP__3_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_3_0)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP__3_0_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_3_0_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP__3_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_3_0_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP__3_25)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_3_25)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP__3_25_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_3_25_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP__3_25_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_3_25_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP__3_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_3_5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP__3_5_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_3_5_computed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOME_HDP__3_5_disc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AWAY_HDP_3_5_disc)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

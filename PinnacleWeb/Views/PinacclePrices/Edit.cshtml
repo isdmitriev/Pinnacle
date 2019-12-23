@@ -1,0 +1,2669 @@
+﻿@model PinnacleClasses.DatabaseObjects.PinacclePrices
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>PinacclePrices</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="EventId" class="control-label"></label>
+                <input asp-for="EventId" class="form-control" />
+                <span asp-validation-for="EventId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateAdded" class="control-label"></label>
+                <input asp-for="DateAdded" class="form-control" />
+                <span asp-validation-for="DateAdded" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IsLive" class="control-label"></label>
+                <input asp-for="IsLive" class="form-control" />
+                <span asp-validation-for="IsLive" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartTime" class="control-label"></label>
+                <input asp-for="StartTime" class="form-control" />
+                <span asp-validation-for="StartTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HomeTeam" class="control-label"></label>
+                <input asp-for="HomeTeam" class="form-control" />
+                <span asp-validation-for="HomeTeam" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AwayTeam" class="control-label"></label>
+                <input asp-for="AwayTeam" class="form-control" />
+                <span asp-validation-for="AwayTeam" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME" class="control-label"></label>
+                <input asp-for="HOME" class="form-control" />
+                <span asp-validation-for="HOME" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DRAW" class="control-label"></label>
+                <input asp-for="DRAW" class="form-control" />
+                <span asp-validation-for="DRAW" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY" class="control-label"></label>
+                <input asp-for="AWAY" class="form-control" />
+                <span asp-validation-for="AWAY" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_computed_" class="control-label"></label>
+                <input asp-for="HOME_computed_" class="form-control" />
+                <span asp-validation-for="HOME_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DRAW_computed_" class="control-label"></label>
+                <input asp-for="DRAW_computed_" class="form-control" />
+                <span asp-validation-for="DRAW_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_computed_" class="control-label"></label>
+                <input asp-for="AWAY_computed_" class="form-control" />
+                <span asp-validation-for="AWAY_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_disc" class="control-label"></label>
+                <input asp-for="HOME_disc" class="form-control" />
+                <span asp-validation-for="HOME_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DRAW_disc" class="control-label"></label>
+                <input asp-for="DRAW_disc" class="form-control" />
+                <span asp-validation-for="DRAW_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_disc" class="control-label"></label>
+                <input asp-for="AWAY_disc" class="form-control" />
+                <span asp-validation-for="AWAY_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOMEAWAY" class="control-label"></label>
+                <input asp-for="HOMEAWAY" class="form-control" />
+                <span asp-validation-for="HOMEAWAY" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOMEDRAW" class="control-label"></label>
+                <input asp-for="HOMEDRAW" class="form-control" />
+                <span asp-validation-for="HOMEDRAW" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DRAWAWAY" class="control-label"></label>
+                <input asp-for="DRAWAWAY" class="form-control" />
+                <span asp-validation-for="DRAWAWAY" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOMEAWAY_computed_" class="control-label"></label>
+                <input asp-for="HOMEAWAY_computed_" class="form-control" />
+                <span asp-validation-for="HOMEAWAY_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOMEDRAW_computed_" class="control-label"></label>
+                <input asp-for="HOMEDRAW_computed_" class="form-control" />
+                <span asp-validation-for="HOMEDRAW_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DRAWAWAY_computed_" class="control-label"></label>
+                <input asp-for="DRAWAWAY_computed_" class="form-control" />
+                <span asp-validation-for="DRAWAWAY_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOMEAWAY_disc" class="control-label"></label>
+                <input asp-for="HOMEAWAY_disc" class="form-control" />
+                <span asp-validation-for="HOMEAWAY_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOMEDRAW_disc" class="control-label"></label>
+                <input asp-for="HOMEDRAW_disc" class="form-control" />
+                <span asp-validation-for="HOMEDRAW_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DRAWAWAY_disc" class="control-label"></label>
+                <input asp-for="DRAWAWAY_disc" class="form-control" />
+                <span asp-validation-for="DRAWAWAY_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_0_5" class="control-label"></label>
+                <input asp-for="TO_0_5" class="form-control" />
+                <span asp-validation-for="TO_0_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_0_5" class="control-label"></label>
+                <input asp-for="TU_0_5" class="form-control" />
+                <span asp-validation-for="TU_0_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_0_5_computed_" class="control-label"></label>
+                <input asp-for="TO_0_5_computed_" class="form-control" />
+                <span asp-validation-for="TO_0_5_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_0_5_computed_" class="control-label"></label>
+                <input asp-for="TU_0_5_computed_" class="form-control" />
+                <span asp-validation-for="TU_0_5_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_0_5_disc" class="control-label"></label>
+                <input asp-for="TO_0_5_disc" class="form-control" />
+                <span asp-validation-for="TO_0_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_0_5_disc" class="control-label"></label>
+                <input asp-for="TU_0_5_disc" class="form-control" />
+                <span asp-validation-for="TU_0_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_0_75" class="control-label"></label>
+                <input asp-for="TO_0_75" class="form-control" />
+                <span asp-validation-for="TO_0_75" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_0_75" class="control-label"></label>
+                <input asp-for="TU_0_75" class="form-control" />
+                <span asp-validation-for="TU_0_75" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_0_75_computed_" class="control-label"></label>
+                <input asp-for="TO_0_75_computed_" class="form-control" />
+                <span asp-validation-for="TO_0_75_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_0_75_computed_" class="control-label"></label>
+                <input asp-for="TU_0_75_computed_" class="form-control" />
+                <span asp-validation-for="TU_0_75_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_0_75_disc" class="control-label"></label>
+                <input asp-for="TO_0_75_disc" class="form-control" />
+                <span asp-validation-for="TO_0_75_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_0_75_disc" class="control-label"></label>
+                <input asp-for="TU_0_75_disc" class="form-control" />
+                <span asp-validation-for="TU_0_75_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_1_0" class="control-label"></label>
+                <input asp-for="TO_1_0" class="form-control" />
+                <span asp-validation-for="TO_1_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_1_0" class="control-label"></label>
+                <input asp-for="TU_1_0" class="form-control" />
+                <span asp-validation-for="TU_1_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_1_0_computed_" class="control-label"></label>
+                <input asp-for="TO_1_0_computed_" class="form-control" />
+                <span asp-validation-for="TO_1_0_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_1_0_computed_" class="control-label"></label>
+                <input asp-for="TU_1_0_computed_" class="form-control" />
+                <span asp-validation-for="TU_1_0_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_1_0_disc" class="control-label"></label>
+                <input asp-for="TO_1_0_disc" class="form-control" />
+                <span asp-validation-for="TO_1_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_1_0_disc" class="control-label"></label>
+                <input asp-for="TU_1_0_disc" class="form-control" />
+                <span asp-validation-for="TU_1_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_1_25" class="control-label"></label>
+                <input asp-for="TO_1_25" class="form-control" />
+                <span asp-validation-for="TO_1_25" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_1_25" class="control-label"></label>
+                <input asp-for="TU_1_25" class="form-control" />
+                <span asp-validation-for="TU_1_25" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_1_25_computed_" class="control-label"></label>
+                <input asp-for="TO_1_25_computed_" class="form-control" />
+                <span asp-validation-for="TO_1_25_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_1_25_computed_" class="control-label"></label>
+                <input asp-for="TU_1_25_computed_" class="form-control" />
+                <span asp-validation-for="TU_1_25_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_1_25_disc" class="control-label"></label>
+                <input asp-for="TO_1_25_disc" class="form-control" />
+                <span asp-validation-for="TO_1_25_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_1_25_disc" class="control-label"></label>
+                <input asp-for="TU_1_25_disc" class="form-control" />
+                <span asp-validation-for="TU_1_25_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_1_5" class="control-label"></label>
+                <input asp-for="TO_1_5" class="form-control" />
+                <span asp-validation-for="TO_1_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_1_5" class="control-label"></label>
+                <input asp-for="TU_1_5" class="form-control" />
+                <span asp-validation-for="TU_1_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_1_5_computed_" class="control-label"></label>
+                <input asp-for="TO_1_5_computed_" class="form-control" />
+                <span asp-validation-for="TO_1_5_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_1_5_computed_" class="control-label"></label>
+                <input asp-for="TU_1_5_computed_" class="form-control" />
+                <span asp-validation-for="TU_1_5_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_1_5_disc" class="control-label"></label>
+                <input asp-for="TO_1_5_disc" class="form-control" />
+                <span asp-validation-for="TO_1_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_1_5_disc" class="control-label"></label>
+                <input asp-for="TU_1_5_disc" class="form-control" />
+                <span asp-validation-for="TU_1_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_1_75" class="control-label"></label>
+                <input asp-for="TO_1_75" class="form-control" />
+                <span asp-validation-for="TO_1_75" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_1_75" class="control-label"></label>
+                <input asp-for="TU_1_75" class="form-control" />
+                <span asp-validation-for="TU_1_75" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_1_75_computed_" class="control-label"></label>
+                <input asp-for="TO_1_75_computed_" class="form-control" />
+                <span asp-validation-for="TO_1_75_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_1_75_computed_" class="control-label"></label>
+                <input asp-for="TU_1_75_computed_" class="form-control" />
+                <span asp-validation-for="TU_1_75_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_1_75_disc" class="control-label"></label>
+                <input asp-for="TO_1_75_disc" class="form-control" />
+                <span asp-validation-for="TO_1_75_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_1_75_disc" class="control-label"></label>
+                <input asp-for="TU_1_75_disc" class="form-control" />
+                <span asp-validation-for="TU_1_75_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_2_0" class="control-label"></label>
+                <input asp-for="TO_2_0" class="form-control" />
+                <span asp-validation-for="TO_2_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_2_0" class="control-label"></label>
+                <input asp-for="TU_2_0" class="form-control" />
+                <span asp-validation-for="TU_2_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_2_0_computed_" class="control-label"></label>
+                <input asp-for="TO_2_0_computed_" class="form-control" />
+                <span asp-validation-for="TO_2_0_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_2_0_computed_" class="control-label"></label>
+                <input asp-for="TU_2_0_computed_" class="form-control" />
+                <span asp-validation-for="TU_2_0_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_2_0_disc" class="control-label"></label>
+                <input asp-for="TO_2_0_disc" class="form-control" />
+                <span asp-validation-for="TO_2_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_2_0_disc" class="control-label"></label>
+                <input asp-for="TU_2_0_disc" class="form-control" />
+                <span asp-validation-for="TU_2_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_2_25" class="control-label"></label>
+                <input asp-for="TO_2_25" class="form-control" />
+                <span asp-validation-for="TO_2_25" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_2_25" class="control-label"></label>
+                <input asp-for="TU_2_25" class="form-control" />
+                <span asp-validation-for="TU_2_25" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_2_25_computed_" class="control-label"></label>
+                <input asp-for="TO_2_25_computed_" class="form-control" />
+                <span asp-validation-for="TO_2_25_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_2_25_computed_" class="control-label"></label>
+                <input asp-for="TU_2_25_computed_" class="form-control" />
+                <span asp-validation-for="TU_2_25_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_2_25_disc" class="control-label"></label>
+                <input asp-for="TO_2_25_disc" class="form-control" />
+                <span asp-validation-for="TO_2_25_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_2_25_disc" class="control-label"></label>
+                <input asp-for="TU_2_25_disc" class="form-control" />
+                <span asp-validation-for="TU_2_25_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_2_5" class="control-label"></label>
+                <input asp-for="TO_2_5" class="form-control" />
+                <span asp-validation-for="TO_2_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_2_5" class="control-label"></label>
+                <input asp-for="TU_2_5" class="form-control" />
+                <span asp-validation-for="TU_2_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_2_5_computed_" class="control-label"></label>
+                <input asp-for="TO_2_5_computed_" class="form-control" />
+                <span asp-validation-for="TO_2_5_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_2_5_computed_" class="control-label"></label>
+                <input asp-for="TU_2_5_computed_" class="form-control" />
+                <span asp-validation-for="TU_2_5_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_2_5_disc" class="control-label"></label>
+                <input asp-for="TO_2_5_disc" class="form-control" />
+                <span asp-validation-for="TO_2_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_2_5_disc" class="control-label"></label>
+                <input asp-for="TU_2_5_disc" class="form-control" />
+                <span asp-validation-for="TU_2_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_2_75" class="control-label"></label>
+                <input asp-for="TO_2_75" class="form-control" />
+                <span asp-validation-for="TO_2_75" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_2_75" class="control-label"></label>
+                <input asp-for="TU_2_75" class="form-control" />
+                <span asp-validation-for="TU_2_75" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_2_75_computed_" class="control-label"></label>
+                <input asp-for="TO_2_75_computed_" class="form-control" />
+                <span asp-validation-for="TO_2_75_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_2_75_computed_" class="control-label"></label>
+                <input asp-for="TU_2_75_computed_" class="form-control" />
+                <span asp-validation-for="TU_2_75_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_2_75_disc" class="control-label"></label>
+                <input asp-for="TO_2_75_disc" class="form-control" />
+                <span asp-validation-for="TO_2_75_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_2_75_disc" class="control-label"></label>
+                <input asp-for="TU_2_75_disc" class="form-control" />
+                <span asp-validation-for="TU_2_75_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_3_0" class="control-label"></label>
+                <input asp-for="TO_3_0" class="form-control" />
+                <span asp-validation-for="TO_3_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_3_0" class="control-label"></label>
+                <input asp-for="TU_3_0" class="form-control" />
+                <span asp-validation-for="TU_3_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_3_0_computed_" class="control-label"></label>
+                <input asp-for="TO_3_0_computed_" class="form-control" />
+                <span asp-validation-for="TO_3_0_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_3_0_computed_" class="control-label"></label>
+                <input asp-for="TU_3_0_computed_" class="form-control" />
+                <span asp-validation-for="TU_3_0_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_3_0_disc" class="control-label"></label>
+                <input asp-for="TO_3_0_disc" class="form-control" />
+                <span asp-validation-for="TO_3_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_3_0_disc" class="control-label"></label>
+                <input asp-for="TU_3_0_disc" class="form-control" />
+                <span asp-validation-for="TU_3_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_3_25" class="control-label"></label>
+                <input asp-for="TO_3_25" class="form-control" />
+                <span asp-validation-for="TO_3_25" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_3_25" class="control-label"></label>
+                <input asp-for="TU_3_25" class="form-control" />
+                <span asp-validation-for="TU_3_25" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_3_25_computed_" class="control-label"></label>
+                <input asp-for="TO_3_25_computed_" class="form-control" />
+                <span asp-validation-for="TO_3_25_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_3_25_computed_" class="control-label"></label>
+                <input asp-for="TU_3_25_computed_" class="form-control" />
+                <span asp-validation-for="TU_3_25_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_3_25_disc" class="control-label"></label>
+                <input asp-for="TO_3_25_disc" class="form-control" />
+                <span asp-validation-for="TO_3_25_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_3_25_disc" class="control-label"></label>
+                <input asp-for="TU_3_25_disc" class="form-control" />
+                <span asp-validation-for="TU_3_25_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_3_5" class="control-label"></label>
+                <input asp-for="TO_3_5" class="form-control" />
+                <span asp-validation-for="TO_3_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_3_5" class="control-label"></label>
+                <input asp-for="TU_3_5" class="form-control" />
+                <span asp-validation-for="TU_3_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_3_5_computed_" class="control-label"></label>
+                <input asp-for="TO_3_5_computed_" class="form-control" />
+                <span asp-validation-for="TO_3_5_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_3_5_computed_" class="control-label"></label>
+                <input asp-for="TU_3_5_computed_" class="form-control" />
+                <span asp-validation-for="TU_3_5_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_3_5_disc" class="control-label"></label>
+                <input asp-for="TO_3_5_disc" class="form-control" />
+                <span asp-validation-for="TO_3_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_3_5_disc" class="control-label"></label>
+                <input asp-for="TU_3_5_disc" class="form-control" />
+                <span asp-validation-for="TU_3_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_3_75" class="control-label"></label>
+                <input asp-for="TO_3_75" class="form-control" />
+                <span asp-validation-for="TO_3_75" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_3_75" class="control-label"></label>
+                <input asp-for="TU_3_75" class="form-control" />
+                <span asp-validation-for="TU_3_75" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_3_75_computed_" class="control-label"></label>
+                <input asp-for="TO_3_75_computed_" class="form-control" />
+                <span asp-validation-for="TO_3_75_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_3_75_computed_" class="control-label"></label>
+                <input asp-for="TU_3_75_computed_" class="form-control" />
+                <span asp-validation-for="TU_3_75_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_3_75_disc" class="control-label"></label>
+                <input asp-for="TO_3_75_disc" class="form-control" />
+                <span asp-validation-for="TO_3_75_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_3_75_disc" class="control-label"></label>
+                <input asp-for="TU_3_75_disc" class="form-control" />
+                <span asp-validation-for="TU_3_75_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_4_0" class="control-label"></label>
+                <input asp-for="TO_4_0" class="form-control" />
+                <span asp-validation-for="TO_4_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_4_0" class="control-label"></label>
+                <input asp-for="TU_4_0" class="form-control" />
+                <span asp-validation-for="TU_4_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_4_0_computed_" class="control-label"></label>
+                <input asp-for="TO_4_0_computed_" class="form-control" />
+                <span asp-validation-for="TO_4_0_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_4_0_computed_" class="control-label"></label>
+                <input asp-for="TU_4_0_computed_" class="form-control" />
+                <span asp-validation-for="TU_4_0_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_4_0_disc" class="control-label"></label>
+                <input asp-for="TO_4_0_disc" class="form-control" />
+                <span asp-validation-for="TO_4_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_4_0_disc" class="control-label"></label>
+                <input asp-for="TU_4_0_disc" class="form-control" />
+                <span asp-validation-for="TU_4_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_4_25" class="control-label"></label>
+                <input asp-for="TO_4_25" class="form-control" />
+                <span asp-validation-for="TO_4_25" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_4_25" class="control-label"></label>
+                <input asp-for="TU_4_25" class="form-control" />
+                <span asp-validation-for="TU_4_25" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_4_25_computed_" class="control-label"></label>
+                <input asp-for="TO_4_25_computed_" class="form-control" />
+                <span asp-validation-for="TO_4_25_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_4_25_computed_" class="control-label"></label>
+                <input asp-for="TU_4_25_computed_" class="form-control" />
+                <span asp-validation-for="TU_4_25_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_4_25_disc" class="control-label"></label>
+                <input asp-for="TO_4_25_disc" class="form-control" />
+                <span asp-validation-for="TO_4_25_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_4_25_disc" class="control-label"></label>
+                <input asp-for="TU_4_25_disc" class="form-control" />
+                <span asp-validation-for="TU_4_25_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_4_5" class="control-label"></label>
+                <input asp-for="TO_4_5" class="form-control" />
+                <span asp-validation-for="TO_4_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_4_5" class="control-label"></label>
+                <input asp-for="TU_4_5" class="form-control" />
+                <span asp-validation-for="TU_4_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_4_5_computed_" class="control-label"></label>
+                <input asp-for="TO_4_5_computed_" class="form-control" />
+                <span asp-validation-for="TO_4_5_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_4_5_computed_" class="control-label"></label>
+                <input asp-for="TU_4_5_computed_" class="form-control" />
+                <span asp-validation-for="TU_4_5_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_4_5_disc" class="control-label"></label>
+                <input asp-for="TO_4_5_disc" class="form-control" />
+                <span asp-validation-for="TO_4_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_4_5_disc" class="control-label"></label>
+                <input asp-for="TU_4_5_disc" class="form-control" />
+                <span asp-validation-for="TU_4_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_4_75" class="control-label"></label>
+                <input asp-for="TO_4_75" class="form-control" />
+                <span asp-validation-for="TO_4_75" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_4_75" class="control-label"></label>
+                <input asp-for="TU_4_75" class="form-control" />
+                <span asp-validation-for="TU_4_75" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_4_75_computed_" class="control-label"></label>
+                <input asp-for="TO_4_75_computed_" class="form-control" />
+                <span asp-validation-for="TO_4_75_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_4_75_computed_" class="control-label"></label>
+                <input asp-for="TU_4_75_computed_" class="form-control" />
+                <span asp-validation-for="TU_4_75_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_4_75_disc" class="control-label"></label>
+                <input asp-for="TO_4_75_disc" class="form-control" />
+                <span asp-validation-for="TO_4_75_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_4_75_disc" class="control-label"></label>
+                <input asp-for="TU_4_75_disc" class="form-control" />
+                <span asp-validation-for="TU_4_75_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_5_0" class="control-label"></label>
+                <input asp-for="TO_5_0" class="form-control" />
+                <span asp-validation-for="TO_5_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_5_0" class="control-label"></label>
+                <input asp-for="TU_5_0" class="form-control" />
+                <span asp-validation-for="TU_5_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_5_0_computed_" class="control-label"></label>
+                <input asp-for="TO_5_0_computed_" class="form-control" />
+                <span asp-validation-for="TO_5_0_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_5_0_computed_" class="control-label"></label>
+                <input asp-for="TU_5_0_computed_" class="form-control" />
+                <span asp-validation-for="TU_5_0_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_5_0_disc" class="control-label"></label>
+                <input asp-for="TO_5_0_disc" class="form-control" />
+                <span asp-validation-for="TO_5_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_5_0_disc" class="control-label"></label>
+                <input asp-for="TU_5_0_disc" class="form-control" />
+                <span asp-validation-for="TU_5_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_5_25" class="control-label"></label>
+                <input asp-for="TO_5_25" class="form-control" />
+                <span asp-validation-for="TO_5_25" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_5_25" class="control-label"></label>
+                <input asp-for="TU_5_25" class="form-control" />
+                <span asp-validation-for="TU_5_25" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_5_25_computed_" class="control-label"></label>
+                <input asp-for="TO_5_25_computed_" class="form-control" />
+                <span asp-validation-for="TO_5_25_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_5_25_computed_" class="control-label"></label>
+                <input asp-for="TU_5_25_computed_" class="form-control" />
+                <span asp-validation-for="TU_5_25_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_5_25_disc" class="control-label"></label>
+                <input asp-for="TO_5_25_disc" class="form-control" />
+                <span asp-validation-for="TO_5_25_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_5_25_disc" class="control-label"></label>
+                <input asp-for="TU_5_25_disc" class="form-control" />
+                <span asp-validation-for="TU_5_25_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_5_5" class="control-label"></label>
+                <input asp-for="TO_5_5" class="form-control" />
+                <span asp-validation-for="TO_5_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_5_5" class="control-label"></label>
+                <input asp-for="TU_5_5" class="form-control" />
+                <span asp-validation-for="TU_5_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_5_5_computed_" class="control-label"></label>
+                <input asp-for="TO_5_5_computed_" class="form-control" />
+                <span asp-validation-for="TO_5_5_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_5_5_computed_" class="control-label"></label>
+                <input asp-for="TU_5_5_computed_" class="form-control" />
+                <span asp-validation-for="TU_5_5_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_5_5_disc" class="control-label"></label>
+                <input asp-for="TO_5_5_disc" class="form-control" />
+                <span asp-validation-for="TO_5_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_5_5_disc" class="control-label"></label>
+                <input asp-for="TU_5_5_disc" class="form-control" />
+                <span asp-validation-for="TU_5_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_5_75" class="control-label"></label>
+                <input asp-for="TO_5_75" class="form-control" />
+                <span asp-validation-for="TO_5_75" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_5_75" class="control-label"></label>
+                <input asp-for="TU_5_75" class="form-control" />
+                <span asp-validation-for="TU_5_75" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_5_75_computed_" class="control-label"></label>
+                <input asp-for="TO_5_75_computed_" class="form-control" />
+                <span asp-validation-for="TO_5_75_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_5_75_computed_" class="control-label"></label>
+                <input asp-for="TU_5_75_computed_" class="form-control" />
+                <span asp-validation-for="TU_5_75_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_5_75_disc" class="control-label"></label>
+                <input asp-for="TO_5_75_disc" class="form-control" />
+                <span asp-validation-for="TO_5_75_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_5_75_disc" class="control-label"></label>
+                <input asp-for="TU_5_75_disc" class="form-control" />
+                <span asp-validation-for="TU_5_75_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_6_0" class="control-label"></label>
+                <input asp-for="TO_6_0" class="form-control" />
+                <span asp-validation-for="TO_6_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_6_0" class="control-label"></label>
+                <input asp-for="TU_6_0" class="form-control" />
+                <span asp-validation-for="TU_6_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_6_0_computed_" class="control-label"></label>
+                <input asp-for="TO_6_0_computed_" class="form-control" />
+                <span asp-validation-for="TO_6_0_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_6_0_computed_" class="control-label"></label>
+                <input asp-for="TU_6_0_computed_" class="form-control" />
+                <span asp-validation-for="TU_6_0_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_6_0_disc" class="control-label"></label>
+                <input asp-for="TO_6_0_disc" class="form-control" />
+                <span asp-validation-for="TO_6_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_6_0_disc" class="control-label"></label>
+                <input asp-for="TU_6_0_disc" class="form-control" />
+                <span asp-validation-for="TU_6_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_6_25" class="control-label"></label>
+                <input asp-for="TO_6_25" class="form-control" />
+                <span asp-validation-for="TO_6_25" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_6_25" class="control-label"></label>
+                <input asp-for="TU_6_25" class="form-control" />
+                <span asp-validation-for="TU_6_25" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_6_25_computed_" class="control-label"></label>
+                <input asp-for="TO_6_25_computed_" class="form-control" />
+                <span asp-validation-for="TO_6_25_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_6_25_computed_" class="control-label"></label>
+                <input asp-for="TU_6_25_computed_" class="form-control" />
+                <span asp-validation-for="TU_6_25_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_6_25_disc" class="control-label"></label>
+                <input asp-for="TO_6_25_disc" class="form-control" />
+                <span asp-validation-for="TO_6_25_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_6_25_disc" class="control-label"></label>
+                <input asp-for="TU_6_25_disc" class="form-control" />
+                <span asp-validation-for="TU_6_25_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_6_5" class="control-label"></label>
+                <input asp-for="TO_6_5" class="form-control" />
+                <span asp-validation-for="TO_6_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_6_5" class="control-label"></label>
+                <input asp-for="TU_6_5" class="form-control" />
+                <span asp-validation-for="TU_6_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_6_5_computed_" class="control-label"></label>
+                <input asp-for="TO_6_5_computed_" class="form-control" />
+                <span asp-validation-for="TO_6_5_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_6_5_computed_" class="control-label"></label>
+                <input asp-for="TU_6_5_computed_" class="form-control" />
+                <span asp-validation-for="TU_6_5_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TO_6_5_disc" class="control-label"></label>
+                <input asp-for="TO_6_5_disc" class="form-control" />
+                <span asp-validation-for="TO_6_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TU_6_5_disc" class="control-label"></label>
+                <input asp-for="TU_6_5_disc" class="form-control" />
+                <span asp-validation-for="TU_6_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_0_5" class="control-label"></label>
+                <input asp-for="T1O_0_5" class="form-control" />
+                <span asp-validation-for="T1O_0_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_0_5" class="control-label"></label>
+                <input asp-for="T1U_0_5" class="form-control" />
+                <span asp-validation-for="T1U_0_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_0_5_computed_" class="control-label"></label>
+                <input asp-for="T1O_0_5_computed_" class="form-control" />
+                <span asp-validation-for="T1O_0_5_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_0_5_computed_" class="control-label"></label>
+                <input asp-for="T1U_0_5_computed_" class="form-control" />
+                <span asp-validation-for="T1U_0_5_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_0_5_disc" class="control-label"></label>
+                <input asp-for="T1O_0_5_disc" class="form-control" />
+                <span asp-validation-for="T1O_0_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_0_5_disc" class="control-label"></label>
+                <input asp-for="T1U_0_5_disc" class="form-control" />
+                <span asp-validation-for="T1U_0_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_0_75" class="control-label"></label>
+                <input asp-for="T1O_0_75" class="form-control" />
+                <span asp-validation-for="T1O_0_75" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_0_75" class="control-label"></label>
+                <input asp-for="T1U_0_75" class="form-control" />
+                <span asp-validation-for="T1U_0_75" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_0_75_computed_" class="control-label"></label>
+                <input asp-for="T1O_0_75_computed_" class="form-control" />
+                <span asp-validation-for="T1O_0_75_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_0_75_computed_" class="control-label"></label>
+                <input asp-for="T1U_0_75_computed_" class="form-control" />
+                <span asp-validation-for="T1U_0_75_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_0_75_disc" class="control-label"></label>
+                <input asp-for="T1O_0_75_disc" class="form-control" />
+                <span asp-validation-for="T1O_0_75_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_0_75_disc" class="control-label"></label>
+                <input asp-for="T1U_0_75_disc" class="form-control" />
+                <span asp-validation-for="T1U_0_75_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_1_0" class="control-label"></label>
+                <input asp-for="T1O_1_0" class="form-control" />
+                <span asp-validation-for="T1O_1_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_1_0" class="control-label"></label>
+                <input asp-for="T1U_1_0" class="form-control" />
+                <span asp-validation-for="T1U_1_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_1_0_computed_" class="control-label"></label>
+                <input asp-for="T1O_1_0_computed_" class="form-control" />
+                <span asp-validation-for="T1O_1_0_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_1_0_computed_" class="control-label"></label>
+                <input asp-for="T1U_1_0_computed_" class="form-control" />
+                <span asp-validation-for="T1U_1_0_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_1_0_disc" class="control-label"></label>
+                <input asp-for="T1O_1_0_disc" class="form-control" />
+                <span asp-validation-for="T1O_1_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_1_0_disc" class="control-label"></label>
+                <input asp-for="T1U_1_0_disc" class="form-control" />
+                <span asp-validation-for="T1U_1_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_1_25" class="control-label"></label>
+                <input asp-for="T1O_1_25" class="form-control" />
+                <span asp-validation-for="T1O_1_25" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_1_25" class="control-label"></label>
+                <input asp-for="T1U_1_25" class="form-control" />
+                <span asp-validation-for="T1U_1_25" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_1_25_computed_" class="control-label"></label>
+                <input asp-for="T1O_1_25_computed_" class="form-control" />
+                <span asp-validation-for="T1O_1_25_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_1_25_computed_" class="control-label"></label>
+                <input asp-for="T1U_1_25_computed_" class="form-control" />
+                <span asp-validation-for="T1U_1_25_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_1_25_disc" class="control-label"></label>
+                <input asp-for="T1O_1_25_disc" class="form-control" />
+                <span asp-validation-for="T1O_1_25_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_1_25_disc" class="control-label"></label>
+                <input asp-for="T1U_1_25_disc" class="form-control" />
+                <span asp-validation-for="T1U_1_25_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_1_5" class="control-label"></label>
+                <input asp-for="T1O_1_5" class="form-control" />
+                <span asp-validation-for="T1O_1_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_1_5" class="control-label"></label>
+                <input asp-for="T1U_1_5" class="form-control" />
+                <span asp-validation-for="T1U_1_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_1_5_computed_" class="control-label"></label>
+                <input asp-for="T1O_1_5_computed_" class="form-control" />
+                <span asp-validation-for="T1O_1_5_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_1_5_computed_" class="control-label"></label>
+                <input asp-for="T1U_1_5_computed_" class="form-control" />
+                <span asp-validation-for="T1U_1_5_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_1_5_disc" class="control-label"></label>
+                <input asp-for="T1O_1_5_disc" class="form-control" />
+                <span asp-validation-for="T1O_1_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_1_5_disc" class="control-label"></label>
+                <input asp-for="T1U_1_5_disc" class="form-control" />
+                <span asp-validation-for="T1U_1_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_1_75" class="control-label"></label>
+                <input asp-for="T1O_1_75" class="form-control" />
+                <span asp-validation-for="T1O_1_75" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_1_75" class="control-label"></label>
+                <input asp-for="T1U_1_75" class="form-control" />
+                <span asp-validation-for="T1U_1_75" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_1_75_computed_" class="control-label"></label>
+                <input asp-for="T1O_1_75_computed_" class="form-control" />
+                <span asp-validation-for="T1O_1_75_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_1_75_computed_" class="control-label"></label>
+                <input asp-for="T1U_1_75_computed_" class="form-control" />
+                <span asp-validation-for="T1U_1_75_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_1_75_disc" class="control-label"></label>
+                <input asp-for="T1O_1_75_disc" class="form-control" />
+                <span asp-validation-for="T1O_1_75_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_1_75_disc" class="control-label"></label>
+                <input asp-for="T1U_1_75_disc" class="form-control" />
+                <span asp-validation-for="T1U_1_75_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_2_0" class="control-label"></label>
+                <input asp-for="T1O_2_0" class="form-control" />
+                <span asp-validation-for="T1O_2_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_2_0" class="control-label"></label>
+                <input asp-for="T1U_2_0" class="form-control" />
+                <span asp-validation-for="T1U_2_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_2_0_computed_" class="control-label"></label>
+                <input asp-for="T1O_2_0_computed_" class="form-control" />
+                <span asp-validation-for="T1O_2_0_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_2_0_computed_" class="control-label"></label>
+                <input asp-for="T1U_2_0_computed_" class="form-control" />
+                <span asp-validation-for="T1U_2_0_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_2_0_disc" class="control-label"></label>
+                <input asp-for="T1O_2_0_disc" class="form-control" />
+                <span asp-validation-for="T1O_2_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_2_0_disc" class="control-label"></label>
+                <input asp-for="T1U_2_0_disc" class="form-control" />
+                <span asp-validation-for="T1U_2_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_2_25" class="control-label"></label>
+                <input asp-for="T1O_2_25" class="form-control" />
+                <span asp-validation-for="T1O_2_25" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_2_25" class="control-label"></label>
+                <input asp-for="T1U_2_25" class="form-control" />
+                <span asp-validation-for="T1U_2_25" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_2_25_computed_" class="control-label"></label>
+                <input asp-for="T1O_2_25_computed_" class="form-control" />
+                <span asp-validation-for="T1O_2_25_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_2_25_computed_" class="control-label"></label>
+                <input asp-for="T1U_2_25_computed_" class="form-control" />
+                <span asp-validation-for="T1U_2_25_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_2_25_disc" class="control-label"></label>
+                <input asp-for="T1O_2_25_disc" class="form-control" />
+                <span asp-validation-for="T1O_2_25_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_2_25_disc" class="control-label"></label>
+                <input asp-for="T1U_2_25_disc" class="form-control" />
+                <span asp-validation-for="T1U_2_25_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_2_5" class="control-label"></label>
+                <input asp-for="T1O_2_5" class="form-control" />
+                <span asp-validation-for="T1O_2_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_2_5" class="control-label"></label>
+                <input asp-for="T1U_2_5" class="form-control" />
+                <span asp-validation-for="T1U_2_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_2_5_computed_" class="control-label"></label>
+                <input asp-for="T1O_2_5_computed_" class="form-control" />
+                <span asp-validation-for="T1O_2_5_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_2_5_computed_" class="control-label"></label>
+                <input asp-for="T1U_2_5_computed_" class="form-control" />
+                <span asp-validation-for="T1U_2_5_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_2_5_disc" class="control-label"></label>
+                <input asp-for="T1O_2_5_disc" class="form-control" />
+                <span asp-validation-for="T1O_2_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_2_5_disc" class="control-label"></label>
+                <input asp-for="T1U_2_5_disc" class="form-control" />
+                <span asp-validation-for="T1U_2_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_2_75" class="control-label"></label>
+                <input asp-for="T1O_2_75" class="form-control" />
+                <span asp-validation-for="T1O_2_75" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_2_75" class="control-label"></label>
+                <input asp-for="T1U_2_75" class="form-control" />
+                <span asp-validation-for="T1U_2_75" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_2_75_computed_" class="control-label"></label>
+                <input asp-for="T1O_2_75_computed_" class="form-control" />
+                <span asp-validation-for="T1O_2_75_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_2_75_computed_" class="control-label"></label>
+                <input asp-for="T1U_2_75_computed_" class="form-control" />
+                <span asp-validation-for="T1U_2_75_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_2_75_disc" class="control-label"></label>
+                <input asp-for="T1O_2_75_disc" class="form-control" />
+                <span asp-validation-for="T1O_2_75_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_2_75_disc" class="control-label"></label>
+                <input asp-for="T1U_2_75_disc" class="form-control" />
+                <span asp-validation-for="T1U_2_75_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_3_0" class="control-label"></label>
+                <input asp-for="T1O_3_0" class="form-control" />
+                <span asp-validation-for="T1O_3_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_3_0" class="control-label"></label>
+                <input asp-for="T1U_3_0" class="form-control" />
+                <span asp-validation-for="T1U_3_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_3_0_computed_" class="control-label"></label>
+                <input asp-for="T1O_3_0_computed_" class="form-control" />
+                <span asp-validation-for="T1O_3_0_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_3_0_computed_" class="control-label"></label>
+                <input asp-for="T1U_3_0_computed_" class="form-control" />
+                <span asp-validation-for="T1U_3_0_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_3_0_disc" class="control-label"></label>
+                <input asp-for="T1O_3_0_disc" class="form-control" />
+                <span asp-validation-for="T1O_3_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_3_0_disc" class="control-label"></label>
+                <input asp-for="T1U_3_0_disc" class="form-control" />
+                <span asp-validation-for="T1U_3_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_3_25" class="control-label"></label>
+                <input asp-for="T1O_3_25" class="form-control" />
+                <span asp-validation-for="T1O_3_25" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_3_25" class="control-label"></label>
+                <input asp-for="T1U_3_25" class="form-control" />
+                <span asp-validation-for="T1U_3_25" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_3_25_computed_" class="control-label"></label>
+                <input asp-for="T1O_3_25_computed_" class="form-control" />
+                <span asp-validation-for="T1O_3_25_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_3_25_computed_" class="control-label"></label>
+                <input asp-for="T1U_3_25_computed_" class="form-control" />
+                <span asp-validation-for="T1U_3_25_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_3_25_disc" class="control-label"></label>
+                <input asp-for="T1O_3_25_disc" class="form-control" />
+                <span asp-validation-for="T1O_3_25_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_3_25_disc" class="control-label"></label>
+                <input asp-for="T1U_3_25_disc" class="form-control" />
+                <span asp-validation-for="T1U_3_25_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_3_5" class="control-label"></label>
+                <input asp-for="T1O_3_5" class="form-control" />
+                <span asp-validation-for="T1O_3_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_3_5" class="control-label"></label>
+                <input asp-for="T1U_3_5" class="form-control" />
+                <span asp-validation-for="T1U_3_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_3_5_computed_" class="control-label"></label>
+                <input asp-for="T1O_3_5_computed_" class="form-control" />
+                <span asp-validation-for="T1O_3_5_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_3_5_computed_" class="control-label"></label>
+                <input asp-for="T1U_3_5_computed_" class="form-control" />
+                <span asp-validation-for="T1U_3_5_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_3_5_disc" class="control-label"></label>
+                <input asp-for="T1O_3_5_disc" class="form-control" />
+                <span asp-validation-for="T1O_3_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_3_5_disc" class="control-label"></label>
+                <input asp-for="T1U_3_5_disc" class="form-control" />
+                <span asp-validation-for="T1U_3_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_3_75" class="control-label"></label>
+                <input asp-for="T1O_3_75" class="form-control" />
+                <span asp-validation-for="T1O_3_75" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_3_75" class="control-label"></label>
+                <input asp-for="T1U_3_75" class="form-control" />
+                <span asp-validation-for="T1U_3_75" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_3_75_computed_" class="control-label"></label>
+                <input asp-for="T1O_3_75_computed_" class="form-control" />
+                <span asp-validation-for="T1O_3_75_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_3_75_computed_" class="control-label"></label>
+                <input asp-for="T1U_3_75_computed_" class="form-control" />
+                <span asp-validation-for="T1U_3_75_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_3_75_disc" class="control-label"></label>
+                <input asp-for="T1O_3_75_disc" class="form-control" />
+                <span asp-validation-for="T1O_3_75_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_3_75_disc" class="control-label"></label>
+                <input asp-for="T1U_3_75_disc" class="form-control" />
+                <span asp-validation-for="T1U_3_75_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_4_0" class="control-label"></label>
+                <input asp-for="T1O_4_0" class="form-control" />
+                <span asp-validation-for="T1O_4_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_4_0" class="control-label"></label>
+                <input asp-for="T1U_4_0" class="form-control" />
+                <span asp-validation-for="T1U_4_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_4_0_computed_" class="control-label"></label>
+                <input asp-for="T1O_4_0_computed_" class="form-control" />
+                <span asp-validation-for="T1O_4_0_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_4_0_computed_" class="control-label"></label>
+                <input asp-for="T1U_4_0_computed_" class="form-control" />
+                <span asp-validation-for="T1U_4_0_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_4_0_disc" class="control-label"></label>
+                <input asp-for="T1O_4_0_disc" class="form-control" />
+                <span asp-validation-for="T1O_4_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_4_0_disc" class="control-label"></label>
+                <input asp-for="T1U_4_0_disc" class="form-control" />
+                <span asp-validation-for="T1U_4_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_4_25" class="control-label"></label>
+                <input asp-for="T1O_4_25" class="form-control" />
+                <span asp-validation-for="T1O_4_25" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_4_25" class="control-label"></label>
+                <input asp-for="T1U_4_25" class="form-control" />
+                <span asp-validation-for="T1U_4_25" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_4_25_computed_" class="control-label"></label>
+                <input asp-for="T1O_4_25_computed_" class="form-control" />
+                <span asp-validation-for="T1O_4_25_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_4_25_computed_" class="control-label"></label>
+                <input asp-for="T1U_4_25_computed_" class="form-control" />
+                <span asp-validation-for="T1U_4_25_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_4_25_disc" class="control-label"></label>
+                <input asp-for="T1O_4_25_disc" class="form-control" />
+                <span asp-validation-for="T1O_4_25_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_4_25_disc" class="control-label"></label>
+                <input asp-for="T1U_4_25_disc" class="form-control" />
+                <span asp-validation-for="T1U_4_25_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_4_5" class="control-label"></label>
+                <input asp-for="T1O_4_5" class="form-control" />
+                <span asp-validation-for="T1O_4_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_4_5" class="control-label"></label>
+                <input asp-for="T1U_4_5" class="form-control" />
+                <span asp-validation-for="T1U_4_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_4_5_computed_" class="control-label"></label>
+                <input asp-for="T1O_4_5_computed_" class="form-control" />
+                <span asp-validation-for="T1O_4_5_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_4_5_computed_" class="control-label"></label>
+                <input asp-for="T1U_4_5_computed_" class="form-control" />
+                <span asp-validation-for="T1U_4_5_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1O_4_5_disc" class="control-label"></label>
+                <input asp-for="T1O_4_5_disc" class="form-control" />
+                <span asp-validation-for="T1O_4_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T1U_4_5_disc" class="control-label"></label>
+                <input asp-for="T1U_4_5_disc" class="form-control" />
+                <span asp-validation-for="T1U_4_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_0_5" class="control-label"></label>
+                <input asp-for="T2O_0_5" class="form-control" />
+                <span asp-validation-for="T2O_0_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_0_5" class="control-label"></label>
+                <input asp-for="T2U_0_5" class="form-control" />
+                <span asp-validation-for="T2U_0_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_0_5_computed_" class="control-label"></label>
+                <input asp-for="T2O_0_5_computed_" class="form-control" />
+                <span asp-validation-for="T2O_0_5_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_0_5_computed_" class="control-label"></label>
+                <input asp-for="T2U_0_5_computed_" class="form-control" />
+                <span asp-validation-for="T2U_0_5_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_0_5_disc" class="control-label"></label>
+                <input asp-for="T2O_0_5_disc" class="form-control" />
+                <span asp-validation-for="T2O_0_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_0_5_disc" class="control-label"></label>
+                <input asp-for="T2U_0_5_disc" class="form-control" />
+                <span asp-validation-for="T2U_0_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_0_75" class="control-label"></label>
+                <input asp-for="T2O_0_75" class="form-control" />
+                <span asp-validation-for="T2O_0_75" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_0_75" class="control-label"></label>
+                <input asp-for="T2U_0_75" class="form-control" />
+                <span asp-validation-for="T2U_0_75" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_0_75_computed_" class="control-label"></label>
+                <input asp-for="T2O_0_75_computed_" class="form-control" />
+                <span asp-validation-for="T2O_0_75_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_0_75_computed_" class="control-label"></label>
+                <input asp-for="T2U_0_75_computed_" class="form-control" />
+                <span asp-validation-for="T2U_0_75_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_0_75_disc" class="control-label"></label>
+                <input asp-for="T2O_0_75_disc" class="form-control" />
+                <span asp-validation-for="T2O_0_75_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_0_75_disc" class="control-label"></label>
+                <input asp-for="T2U_0_75_disc" class="form-control" />
+                <span asp-validation-for="T2U_0_75_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_1_0" class="control-label"></label>
+                <input asp-for="T2O_1_0" class="form-control" />
+                <span asp-validation-for="T2O_1_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_1_0" class="control-label"></label>
+                <input asp-for="T2U_1_0" class="form-control" />
+                <span asp-validation-for="T2U_1_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_1_0_computed_" class="control-label"></label>
+                <input asp-for="T2O_1_0_computed_" class="form-control" />
+                <span asp-validation-for="T2O_1_0_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_1_0_computed_" class="control-label"></label>
+                <input asp-for="T2U_1_0_computed_" class="form-control" />
+                <span asp-validation-for="T2U_1_0_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_1_0_disc" class="control-label"></label>
+                <input asp-for="T2O_1_0_disc" class="form-control" />
+                <span asp-validation-for="T2O_1_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_1_0_disc" class="control-label"></label>
+                <input asp-for="T2U_1_0_disc" class="form-control" />
+                <span asp-validation-for="T2U_1_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_1_25" class="control-label"></label>
+                <input asp-for="T2O_1_25" class="form-control" />
+                <span asp-validation-for="T2O_1_25" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_1_25" class="control-label"></label>
+                <input asp-for="T2U_1_25" class="form-control" />
+                <span asp-validation-for="T2U_1_25" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_1_25_computed_" class="control-label"></label>
+                <input asp-for="T2O_1_25_computed_" class="form-control" />
+                <span asp-validation-for="T2O_1_25_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_1_25_computed_" class="control-label"></label>
+                <input asp-for="T2U_1_25_computed_" class="form-control" />
+                <span asp-validation-for="T2U_1_25_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_1_25_disc" class="control-label"></label>
+                <input asp-for="T2O_1_25_disc" class="form-control" />
+                <span asp-validation-for="T2O_1_25_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_1_25_disc" class="control-label"></label>
+                <input asp-for="T2U_1_25_disc" class="form-control" />
+                <span asp-validation-for="T2U_1_25_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_1_5" class="control-label"></label>
+                <input asp-for="T2O_1_5" class="form-control" />
+                <span asp-validation-for="T2O_1_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_1_5" class="control-label"></label>
+                <input asp-for="T2U_1_5" class="form-control" />
+                <span asp-validation-for="T2U_1_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_1_5_computed_" class="control-label"></label>
+                <input asp-for="T2O_1_5_computed_" class="form-control" />
+                <span asp-validation-for="T2O_1_5_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_1_5_computed_" class="control-label"></label>
+                <input asp-for="T2U_1_5_computed_" class="form-control" />
+                <span asp-validation-for="T2U_1_5_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_1_5_disc" class="control-label"></label>
+                <input asp-for="T2O_1_5_disc" class="form-control" />
+                <span asp-validation-for="T2O_1_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_1_5_disc" class="control-label"></label>
+                <input asp-for="T2U_1_5_disc" class="form-control" />
+                <span asp-validation-for="T2U_1_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_1_75" class="control-label"></label>
+                <input asp-for="T2O_1_75" class="form-control" />
+                <span asp-validation-for="T2O_1_75" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_1_75" class="control-label"></label>
+                <input asp-for="T2U_1_75" class="form-control" />
+                <span asp-validation-for="T2U_1_75" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_1_75_computed_" class="control-label"></label>
+                <input asp-for="T2O_1_75_computed_" class="form-control" />
+                <span asp-validation-for="T2O_1_75_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_1_75_computed_" class="control-label"></label>
+                <input asp-for="T2U_1_75_computed_" class="form-control" />
+                <span asp-validation-for="T2U_1_75_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_1_75_disc" class="control-label"></label>
+                <input asp-for="T2O_1_75_disc" class="form-control" />
+                <span asp-validation-for="T2O_1_75_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_1_75_disc" class="control-label"></label>
+                <input asp-for="T2U_1_75_disc" class="form-control" />
+                <span asp-validation-for="T2U_1_75_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_2_0" class="control-label"></label>
+                <input asp-for="T2O_2_0" class="form-control" />
+                <span asp-validation-for="T2O_2_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_2_0" class="control-label"></label>
+                <input asp-for="T2U_2_0" class="form-control" />
+                <span asp-validation-for="T2U_2_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_2_0_computed_" class="control-label"></label>
+                <input asp-for="T2O_2_0_computed_" class="form-control" />
+                <span asp-validation-for="T2O_2_0_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_2_0_computed_" class="control-label"></label>
+                <input asp-for="T2U_2_0_computed_" class="form-control" />
+                <span asp-validation-for="T2U_2_0_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_2_0_disc" class="control-label"></label>
+                <input asp-for="T2O_2_0_disc" class="form-control" />
+                <span asp-validation-for="T2O_2_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_2_0_disc" class="control-label"></label>
+                <input asp-for="T2U_2_0_disc" class="form-control" />
+                <span asp-validation-for="T2U_2_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_2_25" class="control-label"></label>
+                <input asp-for="T2O_2_25" class="form-control" />
+                <span asp-validation-for="T2O_2_25" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_2_25" class="control-label"></label>
+                <input asp-for="T2U_2_25" class="form-control" />
+                <span asp-validation-for="T2U_2_25" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_2_25_computed_" class="control-label"></label>
+                <input asp-for="T2O_2_25_computed_" class="form-control" />
+                <span asp-validation-for="T2O_2_25_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_2_25_computed_" class="control-label"></label>
+                <input asp-for="T2U_2_25_computed_" class="form-control" />
+                <span asp-validation-for="T2U_2_25_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_2_25_disc" class="control-label"></label>
+                <input asp-for="T2O_2_25_disc" class="form-control" />
+                <span asp-validation-for="T2O_2_25_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_2_25_disc" class="control-label"></label>
+                <input asp-for="T2U_2_25_disc" class="form-control" />
+                <span asp-validation-for="T2U_2_25_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_2_5" class="control-label"></label>
+                <input asp-for="T2O_2_5" class="form-control" />
+                <span asp-validation-for="T2O_2_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_2_5" class="control-label"></label>
+                <input asp-for="T2U_2_5" class="form-control" />
+                <span asp-validation-for="T2U_2_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_2_5_computed_" class="control-label"></label>
+                <input asp-for="T2O_2_5_computed_" class="form-control" />
+                <span asp-validation-for="T2O_2_5_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_2_5_computed_" class="control-label"></label>
+                <input asp-for="T2U_2_5_computed_" class="form-control" />
+                <span asp-validation-for="T2U_2_5_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_2_5_disc" class="control-label"></label>
+                <input asp-for="T2O_2_5_disc" class="form-control" />
+                <span asp-validation-for="T2O_2_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_2_5_disc" class="control-label"></label>
+                <input asp-for="T2U_2_5_disc" class="form-control" />
+                <span asp-validation-for="T2U_2_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_2_75" class="control-label"></label>
+                <input asp-for="T2O_2_75" class="form-control" />
+                <span asp-validation-for="T2O_2_75" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_2_75" class="control-label"></label>
+                <input asp-for="T2U_2_75" class="form-control" />
+                <span asp-validation-for="T2U_2_75" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_2_75_computed_" class="control-label"></label>
+                <input asp-for="T2O_2_75_computed_" class="form-control" />
+                <span asp-validation-for="T2O_2_75_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_2_75_computed_" class="control-label"></label>
+                <input asp-for="T2U_2_75_computed_" class="form-control" />
+                <span asp-validation-for="T2U_2_75_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_2_75_disc" class="control-label"></label>
+                <input asp-for="T2O_2_75_disc" class="form-control" />
+                <span asp-validation-for="T2O_2_75_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_2_75_disc" class="control-label"></label>
+                <input asp-for="T2U_2_75_disc" class="form-control" />
+                <span asp-validation-for="T2U_2_75_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_3_0" class="control-label"></label>
+                <input asp-for="T2O_3_0" class="form-control" />
+                <span asp-validation-for="T2O_3_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_3_0" class="control-label"></label>
+                <input asp-for="T2U_3_0" class="form-control" />
+                <span asp-validation-for="T2U_3_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_3_0_computed_" class="control-label"></label>
+                <input asp-for="T2O_3_0_computed_" class="form-control" />
+                <span asp-validation-for="T2O_3_0_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_3_0_computed_" class="control-label"></label>
+                <input asp-for="T2U_3_0_computed_" class="form-control" />
+                <span asp-validation-for="T2U_3_0_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_3_0_disc" class="control-label"></label>
+                <input asp-for="T2O_3_0_disc" class="form-control" />
+                <span asp-validation-for="T2O_3_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_3_0_disc" class="control-label"></label>
+                <input asp-for="T2U_3_0_disc" class="form-control" />
+                <span asp-validation-for="T2U_3_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_3_25" class="control-label"></label>
+                <input asp-for="T2O_3_25" class="form-control" />
+                <span asp-validation-for="T2O_3_25" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_3_25" class="control-label"></label>
+                <input asp-for="T2U_3_25" class="form-control" />
+                <span asp-validation-for="T2U_3_25" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_3_25_computed_" class="control-label"></label>
+                <input asp-for="T2O_3_25_computed_" class="form-control" />
+                <span asp-validation-for="T2O_3_25_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_3_25_computed_" class="control-label"></label>
+                <input asp-for="T2U_3_25_computed_" class="form-control" />
+                <span asp-validation-for="T2U_3_25_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_3_25_disc" class="control-label"></label>
+                <input asp-for="T2O_3_25_disc" class="form-control" />
+                <span asp-validation-for="T2O_3_25_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_3_25_disc" class="control-label"></label>
+                <input asp-for="T2U_3_25_disc" class="form-control" />
+                <span asp-validation-for="T2U_3_25_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_3_5" class="control-label"></label>
+                <input asp-for="T2O_3_5" class="form-control" />
+                <span asp-validation-for="T2O_3_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_3_5" class="control-label"></label>
+                <input asp-for="T2U_3_5" class="form-control" />
+                <span asp-validation-for="T2U_3_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_3_5_computed_" class="control-label"></label>
+                <input asp-for="T2O_3_5_computed_" class="form-control" />
+                <span asp-validation-for="T2O_3_5_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_3_5_computed_" class="control-label"></label>
+                <input asp-for="T2U_3_5_computed_" class="form-control" />
+                <span asp-validation-for="T2U_3_5_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_3_5_disc" class="control-label"></label>
+                <input asp-for="T2O_3_5_disc" class="form-control" />
+                <span asp-validation-for="T2O_3_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_3_5_disc" class="control-label"></label>
+                <input asp-for="T2U_3_5_disc" class="form-control" />
+                <span asp-validation-for="T2U_3_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_3_75" class="control-label"></label>
+                <input asp-for="T2O_3_75" class="form-control" />
+                <span asp-validation-for="T2O_3_75" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_3_75" class="control-label"></label>
+                <input asp-for="T2U_3_75" class="form-control" />
+                <span asp-validation-for="T2U_3_75" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_3_75_computed_" class="control-label"></label>
+                <input asp-for="T2O_3_75_computed_" class="form-control" />
+                <span asp-validation-for="T2O_3_75_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_3_75_computed_" class="control-label"></label>
+                <input asp-for="T2U_3_75_computed_" class="form-control" />
+                <span asp-validation-for="T2U_3_75_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_3_75_disc" class="control-label"></label>
+                <input asp-for="T2O_3_75_disc" class="form-control" />
+                <span asp-validation-for="T2O_3_75_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_3_75_disc" class="control-label"></label>
+                <input asp-for="T2U_3_75_disc" class="form-control" />
+                <span asp-validation-for="T2U_3_75_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_4_0" class="control-label"></label>
+                <input asp-for="T2O_4_0" class="form-control" />
+                <span asp-validation-for="T2O_4_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_4_0" class="control-label"></label>
+                <input asp-for="T2U_4_0" class="form-control" />
+                <span asp-validation-for="T2U_4_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_4_0_computed_" class="control-label"></label>
+                <input asp-for="T2O_4_0_computed_" class="form-control" />
+                <span asp-validation-for="T2O_4_0_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_4_0_computed_" class="control-label"></label>
+                <input asp-for="T2U_4_0_computed_" class="form-control" />
+                <span asp-validation-for="T2U_4_0_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_4_0_disc" class="control-label"></label>
+                <input asp-for="T2O_4_0_disc" class="form-control" />
+                <span asp-validation-for="T2O_4_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_4_0_disc" class="control-label"></label>
+                <input asp-for="T2U_4_0_disc" class="form-control" />
+                <span asp-validation-for="T2U_4_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_4_25" class="control-label"></label>
+                <input asp-for="T2O_4_25" class="form-control" />
+                <span asp-validation-for="T2O_4_25" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_4_25" class="control-label"></label>
+                <input asp-for="T2U_4_25" class="form-control" />
+                <span asp-validation-for="T2U_4_25" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_4_25_computed_" class="control-label"></label>
+                <input asp-for="T2O_4_25_computed_" class="form-control" />
+                <span asp-validation-for="T2O_4_25_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_4_25_computed_" class="control-label"></label>
+                <input asp-for="T2U_4_25_computed_" class="form-control" />
+                <span asp-validation-for="T2U_4_25_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_4_25_disc" class="control-label"></label>
+                <input asp-for="T2O_4_25_disc" class="form-control" />
+                <span asp-validation-for="T2O_4_25_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_4_25_disc" class="control-label"></label>
+                <input asp-for="T2U_4_25_disc" class="form-control" />
+                <span asp-validation-for="T2U_4_25_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_4_5" class="control-label"></label>
+                <input asp-for="T2O_4_5" class="form-control" />
+                <span asp-validation-for="T2O_4_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_4_5" class="control-label"></label>
+                <input asp-for="T2U_4_5" class="form-control" />
+                <span asp-validation-for="T2U_4_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_4_5_computed_" class="control-label"></label>
+                <input asp-for="T2O_4_5_computed_" class="form-control" />
+                <span asp-validation-for="T2O_4_5_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_4_5_computed_" class="control-label"></label>
+                <input asp-for="T2U_4_5_computed_" class="form-control" />
+                <span asp-validation-for="T2U_4_5_computed_" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2O_4_5_disc" class="control-label"></label>
+                <input asp-for="T2O_4_5_disc" class="form-control" />
+                <span asp-validation-for="T2O_4_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="T2U_4_5_disc" class="control-label"></label>
+                <input asp-for="T2U_4_5_disc" class="form-control" />
+                <span asp-validation-for="T2U_4_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP_3_5" class="control-label"></label>
+                <input asp-for="HOME_HDP_3_5" class="form-control" />
+                <span asp-validation-for="HOME_HDP_3_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP__3_5" class="control-label"></label>
+                <input asp-for="AWAY_HDP__3_5" class="form-control" />
+                <span asp-validation-for="AWAY_HDP__3_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP_3_5_computed" class="control-label"></label>
+                <input asp-for="HOME_HDP_3_5_computed" class="form-control" />
+                <span asp-validation-for="HOME_HDP_3_5_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP__3_5_computed" class="control-label"></label>
+                <input asp-for="AWAY_HDP__3_5_computed" class="form-control" />
+                <span asp-validation-for="AWAY_HDP__3_5_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP_3_5_disc" class="control-label"></label>
+                <input asp-for="HOME_HDP_3_5_disc" class="form-control" />
+                <span asp-validation-for="HOME_HDP_3_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP__3_5_disc" class="control-label"></label>
+                <input asp-for="AWAY_HDP__3_5_disc" class="form-control" />
+                <span asp-validation-for="AWAY_HDP__3_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP_3_0" class="control-label"></label>
+                <input asp-for="HOME_HDP_3_0" class="form-control" />
+                <span asp-validation-for="HOME_HDP_3_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP__3_0" class="control-label"></label>
+                <input asp-for="AWAY_HDP__3_0" class="form-control" />
+                <span asp-validation-for="AWAY_HDP__3_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP_3_0_computed" class="control-label"></label>
+                <input asp-for="HOME_HDP_3_0_computed" class="form-control" />
+                <span asp-validation-for="HOME_HDP_3_0_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP__3_0_computed" class="control-label"></label>
+                <input asp-for="AWAY_HDP__3_0_computed" class="form-control" />
+                <span asp-validation-for="AWAY_HDP__3_0_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP_3_0_disc" class="control-label"></label>
+                <input asp-for="HOME_HDP_3_0_disc" class="form-control" />
+                <span asp-validation-for="HOME_HDP_3_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP__3_0_disc" class="control-label"></label>
+                <input asp-for="AWAY_HDP__3_0_disc" class="form-control" />
+                <span asp-validation-for="AWAY_HDP__3_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP_2_75" class="control-label"></label>
+                <input asp-for="HOME_HDP_2_75" class="form-control" />
+                <span asp-validation-for="HOME_HDP_2_75" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP__2_75" class="control-label"></label>
+                <input asp-for="AWAY_HDP__2_75" class="form-control" />
+                <span asp-validation-for="AWAY_HDP__2_75" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP_2_75_computed" class="control-label"></label>
+                <input asp-for="HOME_HDP_2_75_computed" class="form-control" />
+                <span asp-validation-for="HOME_HDP_2_75_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP__2_75_computed" class="control-label"></label>
+                <input asp-for="AWAY_HDP__2_75_computed" class="form-control" />
+                <span asp-validation-for="AWAY_HDP__2_75_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP_2_75_disc" class="control-label"></label>
+                <input asp-for="HOME_HDP_2_75_disc" class="form-control" />
+                <span asp-validation-for="HOME_HDP_2_75_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP__2_75_disc" class="control-label"></label>
+                <input asp-for="AWAY_HDP__2_75_disc" class="form-control" />
+                <span asp-validation-for="AWAY_HDP__2_75_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP_2_5" class="control-label"></label>
+                <input asp-for="HOME_HDP_2_5" class="form-control" />
+                <span asp-validation-for="HOME_HDP_2_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP__2_5" class="control-label"></label>
+                <input asp-for="AWAY_HDP__2_5" class="form-control" />
+                <span asp-validation-for="AWAY_HDP__2_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP_2_5_computed" class="control-label"></label>
+                <input asp-for="HOME_HDP_2_5_computed" class="form-control" />
+                <span asp-validation-for="HOME_HDP_2_5_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP__2_5_computed" class="control-label"></label>
+                <input asp-for="AWAY_HDP__2_5_computed" class="form-control" />
+                <span asp-validation-for="AWAY_HDP__2_5_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP_2_5_disc" class="control-label"></label>
+                <input asp-for="HOME_HDP_2_5_disc" class="form-control" />
+                <span asp-validation-for="HOME_HDP_2_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP__2_5_disc" class="control-label"></label>
+                <input asp-for="AWAY_HDP__2_5_disc" class="form-control" />
+                <span asp-validation-for="AWAY_HDP__2_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP_2_0" class="control-label"></label>
+                <input asp-for="HOME_HDP_2_0" class="form-control" />
+                <span asp-validation-for="HOME_HDP_2_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP__2_0" class="control-label"></label>
+                <input asp-for="AWAY_HDP__2_0" class="form-control" />
+                <span asp-validation-for="AWAY_HDP__2_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP_2_0_computed" class="control-label"></label>
+                <input asp-for="HOME_HDP_2_0_computed" class="form-control" />
+                <span asp-validation-for="HOME_HDP_2_0_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP__2_0_computed" class="control-label"></label>
+                <input asp-for="AWAY_HDP__2_0_computed" class="form-control" />
+                <span asp-validation-for="AWAY_HDP__2_0_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP_2_0_disc" class="control-label"></label>
+                <input asp-for="HOME_HDP_2_0_disc" class="form-control" />
+                <span asp-validation-for="HOME_HDP_2_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP__2_0_disc" class="control-label"></label>
+                <input asp-for="AWAY_HDP__2_0_disc" class="form-control" />
+                <span asp-validation-for="AWAY_HDP__2_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP_1_75" class="control-label"></label>
+                <input asp-for="HOME_HDP_1_75" class="form-control" />
+                <span asp-validation-for="HOME_HDP_1_75" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP__1_75" class="control-label"></label>
+                <input asp-for="AWAY_HDP__1_75" class="form-control" />
+                <span asp-validation-for="AWAY_HDP__1_75" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP_1_75_computed" class="control-label"></label>
+                <input asp-for="HOME_HDP_1_75_computed" class="form-control" />
+                <span asp-validation-for="HOME_HDP_1_75_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP__1_75_computed" class="control-label"></label>
+                <input asp-for="AWAY_HDP__1_75_computed" class="form-control" />
+                <span asp-validation-for="AWAY_HDP__1_75_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP_1_75_disc" class="control-label"></label>
+                <input asp-for="HOME_HDP_1_75_disc" class="form-control" />
+                <span asp-validation-for="HOME_HDP_1_75_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP__1_75_disc" class="control-label"></label>
+                <input asp-for="AWAY_HDP__1_75_disc" class="form-control" />
+                <span asp-validation-for="AWAY_HDP__1_75_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP_1_5" class="control-label"></label>
+                <input asp-for="HOME_HDP_1_5" class="form-control" />
+                <span asp-validation-for="HOME_HDP_1_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP__1_5" class="control-label"></label>
+                <input asp-for="AWAY_HDP__1_5" class="form-control" />
+                <span asp-validation-for="AWAY_HDP__1_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP_1_5_computed" class="control-label"></label>
+                <input asp-for="HOME_HDP_1_5_computed" class="form-control" />
+                <span asp-validation-for="HOME_HDP_1_5_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP__1_5_computed" class="control-label"></label>
+                <input asp-for="AWAY_HDP__1_5_computed" class="form-control" />
+                <span asp-validation-for="AWAY_HDP__1_5_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP_1_5_disc" class="control-label"></label>
+                <input asp-for="HOME_HDP_1_5_disc" class="form-control" />
+                <span asp-validation-for="HOME_HDP_1_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP__1_5_disc" class="control-label"></label>
+                <input asp-for="AWAY_HDP__1_5_disc" class="form-control" />
+                <span asp-validation-for="AWAY_HDP__1_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP_1_0" class="control-label"></label>
+                <input asp-for="HOME_HDP_1_0" class="form-control" />
+                <span asp-validation-for="HOME_HDP_1_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP__1_0" class="control-label"></label>
+                <input asp-for="AWAY_HDP__1_0" class="form-control" />
+                <span asp-validation-for="AWAY_HDP__1_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP_1_0_computed" class="control-label"></label>
+                <input asp-for="HOME_HDP_1_0_computed" class="form-control" />
+                <span asp-validation-for="HOME_HDP_1_0_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP__1_0_computed" class="control-label"></label>
+                <input asp-for="AWAY_HDP__1_0_computed" class="form-control" />
+                <span asp-validation-for="AWAY_HDP__1_0_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP_1_0_disc" class="control-label"></label>
+                <input asp-for="HOME_HDP_1_0_disc" class="form-control" />
+                <span asp-validation-for="HOME_HDP_1_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP__1_0_disc" class="control-label"></label>
+                <input asp-for="AWAY_HDP__1_0_disc" class="form-control" />
+                <span asp-validation-for="AWAY_HDP__1_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP_0_75" class="control-label"></label>
+                <input asp-for="HOME_HDP_0_75" class="form-control" />
+                <span asp-validation-for="HOME_HDP_0_75" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP__0_75" class="control-label"></label>
+                <input asp-for="AWAY_HDP__0_75" class="form-control" />
+                <span asp-validation-for="AWAY_HDP__0_75" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP_0_75_computed" class="control-label"></label>
+                <input asp-for="HOME_HDP_0_75_computed" class="form-control" />
+                <span asp-validation-for="HOME_HDP_0_75_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP__0_75_computed" class="control-label"></label>
+                <input asp-for="AWAY_HDP__0_75_computed" class="form-control" />
+                <span asp-validation-for="AWAY_HDP__0_75_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP_0_75_disc" class="control-label"></label>
+                <input asp-for="HOME_HDP_0_75_disc" class="form-control" />
+                <span asp-validation-for="HOME_HDP_0_75_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP__0_75_disc" class="control-label"></label>
+                <input asp-for="AWAY_HDP__0_75_disc" class="form-control" />
+                <span asp-validation-for="AWAY_HDP__0_75_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP_0_5" class="control-label"></label>
+                <input asp-for="HOME_HDP_0_5" class="form-control" />
+                <span asp-validation-for="HOME_HDP_0_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP__0_5" class="control-label"></label>
+                <input asp-for="AWAY_HDP__0_5" class="form-control" />
+                <span asp-validation-for="AWAY_HDP__0_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP_0_5_computed" class="control-label"></label>
+                <input asp-for="HOME_HDP_0_5_computed" class="form-control" />
+                <span asp-validation-for="HOME_HDP_0_5_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP__0_5_computed" class="control-label"></label>
+                <input asp-for="AWAY_HDP__0_5_computed" class="form-control" />
+                <span asp-validation-for="AWAY_HDP__0_5_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP_0_5_disc" class="control-label"></label>
+                <input asp-for="HOME_HDP_0_5_disc" class="form-control" />
+                <span asp-validation-for="HOME_HDP_0_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP__0_5_disc" class="control-label"></label>
+                <input asp-for="AWAY_HDP__0_5_disc" class="form-control" />
+                <span asp-validation-for="AWAY_HDP__0_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP_0_25" class="control-label"></label>
+                <input asp-for="HOME_HDP_0_25" class="form-control" />
+                <span asp-validation-for="HOME_HDP_0_25" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP__0_25" class="control-label"></label>
+                <input asp-for="AWAY_HDP__0_25" class="form-control" />
+                <span asp-validation-for="AWAY_HDP__0_25" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP_0_25_computed" class="control-label"></label>
+                <input asp-for="HOME_HDP_0_25_computed" class="form-control" />
+                <span asp-validation-for="HOME_HDP_0_25_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP__0_25_computed" class="control-label"></label>
+                <input asp-for="AWAY_HDP__0_25_computed" class="form-control" />
+                <span asp-validation-for="AWAY_HDP__0_25_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP_0_25_disc" class="control-label"></label>
+                <input asp-for="HOME_HDP_0_25_disc" class="form-control" />
+                <span asp-validation-for="HOME_HDP_0_25_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP__0_25_disc" class="control-label"></label>
+                <input asp-for="AWAY_HDP__0_25_disc" class="form-control" />
+                <span asp-validation-for="AWAY_HDP__0_25_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP_0_0" class="control-label"></label>
+                <input asp-for="HOME_HDP_0_0" class="form-control" />
+                <span asp-validation-for="HOME_HDP_0_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_0_0" class="control-label"></label>
+                <input asp-for="AWAY_HDP_0_0" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_0_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP_0_0_computed" class="control-label"></label>
+                <input asp-for="HOME_HDP_0_0_computed" class="form-control" />
+                <span asp-validation-for="HOME_HDP_0_0_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_0_0_computed" class="control-label"></label>
+                <input asp-for="AWAY_HDP_0_0_computed" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_0_0_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP_0_0_disc" class="control-label"></label>
+                <input asp-for="HOME_HDP_0_0_disc" class="form-control" />
+                <span asp-validation-for="HOME_HDP_0_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_0_0_disc" class="control-label"></label>
+                <input asp-for="AWAY_HDP_0_0_disc" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_0_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP__0_25" class="control-label"></label>
+                <input asp-for="HOME_HDP__0_25" class="form-control" />
+                <span asp-validation-for="HOME_HDP__0_25" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_0_25" class="control-label"></label>
+                <input asp-for="AWAY_HDP_0_25" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_0_25" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP__0_25_computed" class="control-label"></label>
+                <input asp-for="HOME_HDP__0_25_computed" class="form-control" />
+                <span asp-validation-for="HOME_HDP__0_25_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_0_25_computed" class="control-label"></label>
+                <input asp-for="AWAY_HDP_0_25_computed" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_0_25_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP__0_25_disc" class="control-label"></label>
+                <input asp-for="HOME_HDP__0_25_disc" class="form-control" />
+                <span asp-validation-for="HOME_HDP__0_25_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_0_25_disc" class="control-label"></label>
+                <input asp-for="AWAY_HDP_0_25_disc" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_0_25_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP__0_5" class="control-label"></label>
+                <input asp-for="HOME_HDP__0_5" class="form-control" />
+                <span asp-validation-for="HOME_HDP__0_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_0_5" class="control-label"></label>
+                <input asp-for="AWAY_HDP_0_5" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_0_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP__0_5_computed" class="control-label"></label>
+                <input asp-for="HOME_HDP__0_5_computed" class="form-control" />
+                <span asp-validation-for="HOME_HDP__0_5_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_0_5_computed" class="control-label"></label>
+                <input asp-for="AWAY_HDP_0_5_computed" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_0_5_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP__0_5_disc" class="control-label"></label>
+                <input asp-for="HOME_HDP__0_5_disc" class="form-control" />
+                <span asp-validation-for="HOME_HDP__0_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_0_5_disc" class="control-label"></label>
+                <input asp-for="AWAY_HDP_0_5_disc" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_0_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP__0_75" class="control-label"></label>
+                <input asp-for="HOME_HDP__0_75" class="form-control" />
+                <span asp-validation-for="HOME_HDP__0_75" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_0_75" class="control-label"></label>
+                <input asp-for="AWAY_HDP_0_75" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_0_75" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP__0_75_computed" class="control-label"></label>
+                <input asp-for="HOME_HDP__0_75_computed" class="form-control" />
+                <span asp-validation-for="HOME_HDP__0_75_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_0_75_computed" class="control-label"></label>
+                <input asp-for="AWAY_HDP_0_75_computed" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_0_75_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP__0_75_disc" class="control-label"></label>
+                <input asp-for="HOME_HDP__0_75_disc" class="form-control" />
+                <span asp-validation-for="HOME_HDP__0_75_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_0_75_disc" class="control-label"></label>
+                <input asp-for="AWAY_HDP_0_75_disc" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_0_75_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP__1_0" class="control-label"></label>
+                <input asp-for="HOME_HDP__1_0" class="form-control" />
+                <span asp-validation-for="HOME_HDP__1_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_1_0" class="control-label"></label>
+                <input asp-for="AWAY_HDP_1_0" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_1_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP__1_0_computed" class="control-label"></label>
+                <input asp-for="HOME_HDP__1_0_computed" class="form-control" />
+                <span asp-validation-for="HOME_HDP__1_0_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_1_0_computed" class="control-label"></label>
+                <input asp-for="AWAY_HDP_1_0_computed" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_1_0_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP__1_0_disc" class="control-label"></label>
+                <input asp-for="HOME_HDP__1_0_disc" class="form-control" />
+                <span asp-validation-for="HOME_HDP__1_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_1_0_disc" class="control-label"></label>
+                <input asp-for="AWAY_HDP_1_0_disc" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_1_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP__1_25" class="control-label"></label>
+                <input asp-for="HOME_HDP__1_25" class="form-control" />
+                <span asp-validation-for="HOME_HDP__1_25" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_1_25" class="control-label"></label>
+                <input asp-for="AWAY_HDP_1_25" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_1_25" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP__1_25_computed" class="control-label"></label>
+                <input asp-for="HOME_HDP__1_25_computed" class="form-control" />
+                <span asp-validation-for="HOME_HDP__1_25_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_1_25_computed" class="control-label"></label>
+                <input asp-for="AWAY_HDP_1_25_computed" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_1_25_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP__1_25_disc" class="control-label"></label>
+                <input asp-for="HOME_HDP__1_25_disc" class="form-control" />
+                <span asp-validation-for="HOME_HDP__1_25_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_1_25_disc" class="control-label"></label>
+                <input asp-for="AWAY_HDP_1_25_disc" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_1_25_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP__1_5" class="control-label"></label>
+                <input asp-for="HOME_HDP__1_5" class="form-control" />
+                <span asp-validation-for="HOME_HDP__1_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_1_5" class="control-label"></label>
+                <input asp-for="AWAY_HDP_1_5" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_1_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP__1_5_computed" class="control-label"></label>
+                <input asp-for="HOME_HDP__1_5_computed" class="form-control" />
+                <span asp-validation-for="HOME_HDP__1_5_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_1_5_computed" class="control-label"></label>
+                <input asp-for="AWAY_HDP_1_5_computed" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_1_5_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP__1_5_disc" class="control-label"></label>
+                <input asp-for="HOME_HDP__1_5_disc" class="form-control" />
+                <span asp-validation-for="HOME_HDP__1_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_1_5_disc" class="control-label"></label>
+                <input asp-for="AWAY_HDP_1_5_disc" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_1_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP__2_0" class="control-label"></label>
+                <input asp-for="HOME_HDP__2_0" class="form-control" />
+                <span asp-validation-for="HOME_HDP__2_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_2_0" class="control-label"></label>
+                <input asp-for="AWAY_HDP_2_0" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_2_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP__2_0_computed" class="control-label"></label>
+                <input asp-for="HOME_HDP__2_0_computed" class="form-control" />
+                <span asp-validation-for="HOME_HDP__2_0_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_2_0_computed" class="control-label"></label>
+                <input asp-for="AWAY_HDP_2_0_computed" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_2_0_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP__2_0_disc" class="control-label"></label>
+                <input asp-for="HOME_HDP__2_0_disc" class="form-control" />
+                <span asp-validation-for="HOME_HDP__2_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_2_0_disc" class="control-label"></label>
+                <input asp-for="AWAY_HDP_2_0_disc" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_2_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP__2_25" class="control-label"></label>
+                <input asp-for="HOME_HDP__2_25" class="form-control" />
+                <span asp-validation-for="HOME_HDP__2_25" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_2_25" class="control-label"></label>
+                <input asp-for="AWAY_HDP_2_25" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_2_25" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP__2_25_computed" class="control-label"></label>
+                <input asp-for="HOME_HDP__2_25_computed" class="form-control" />
+                <span asp-validation-for="HOME_HDP__2_25_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_2_25_computed" class="control-label"></label>
+                <input asp-for="AWAY_HDP_2_25_computed" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_2_25_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP__2_25_disc" class="control-label"></label>
+                <input asp-for="HOME_HDP__2_25_disc" class="form-control" />
+                <span asp-validation-for="HOME_HDP__2_25_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_2_25_disc" class="control-label"></label>
+                <input asp-for="AWAY_HDP_2_25_disc" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_2_25_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP__2_5" class="control-label"></label>
+                <input asp-for="HOME_HDP__2_5" class="form-control" />
+                <span asp-validation-for="HOME_HDP__2_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_2_5" class="control-label"></label>
+                <input asp-for="AWAY_HDP_2_5" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_2_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP__2_5_computed" class="control-label"></label>
+                <input asp-for="HOME_HDP__2_5_computed" class="form-control" />
+                <span asp-validation-for="HOME_HDP__2_5_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_2_5_computed" class="control-label"></label>
+                <input asp-for="AWAY_HDP_2_5_computed" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_2_5_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP__2_5_disc" class="control-label"></label>
+                <input asp-for="HOME_HDP__2_5_disc" class="form-control" />
+                <span asp-validation-for="HOME_HDP__2_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_2_5_disc" class="control-label"></label>
+                <input asp-for="AWAY_HDP_2_5_disc" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_2_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP__2_75" class="control-label"></label>
+                <input asp-for="HOME_HDP__2_75" class="form-control" />
+                <span asp-validation-for="HOME_HDP__2_75" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_2_75" class="control-label"></label>
+                <input asp-for="AWAY_HDP_2_75" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_2_75" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP__2_75_computed" class="control-label"></label>
+                <input asp-for="HOME_HDP__2_75_computed" class="form-control" />
+                <span asp-validation-for="HOME_HDP__2_75_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_2_75_computed" class="control-label"></label>
+                <input asp-for="AWAY_HDP_2_75_computed" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_2_75_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP__2_75_disc" class="control-label"></label>
+                <input asp-for="HOME_HDP__2_75_disc" class="form-control" />
+                <span asp-validation-for="HOME_HDP__2_75_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_2_75_disc" class="control-label"></label>
+                <input asp-for="AWAY_HDP_2_75_disc" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_2_75_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP__3_0" class="control-label"></label>
+                <input asp-for="HOME_HDP__3_0" class="form-control" />
+                <span asp-validation-for="HOME_HDP__3_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_3_0" class="control-label"></label>
+                <input asp-for="AWAY_HDP_3_0" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_3_0" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP__3_0_computed" class="control-label"></label>
+                <input asp-for="HOME_HDP__3_0_computed" class="form-control" />
+                <span asp-validation-for="HOME_HDP__3_0_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_3_0_computed" class="control-label"></label>
+                <input asp-for="AWAY_HDP_3_0_computed" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_3_0_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP__3_0_disc" class="control-label"></label>
+                <input asp-for="HOME_HDP__3_0_disc" class="form-control" />
+                <span asp-validation-for="HOME_HDP__3_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_3_0_disc" class="control-label"></label>
+                <input asp-for="AWAY_HDP_3_0_disc" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_3_0_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP__3_25" class="control-label"></label>
+                <input asp-for="HOME_HDP__3_25" class="form-control" />
+                <span asp-validation-for="HOME_HDP__3_25" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_3_25" class="control-label"></label>
+                <input asp-for="AWAY_HDP_3_25" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_3_25" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP__3_25_computed" class="control-label"></label>
+                <input asp-for="HOME_HDP__3_25_computed" class="form-control" />
+                <span asp-validation-for="HOME_HDP__3_25_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_3_25_computed" class="control-label"></label>
+                <input asp-for="AWAY_HDP_3_25_computed" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_3_25_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP__3_25_disc" class="control-label"></label>
+                <input asp-for="HOME_HDP__3_25_disc" class="form-control" />
+                <span asp-validation-for="HOME_HDP__3_25_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_3_25_disc" class="control-label"></label>
+                <input asp-for="AWAY_HDP_3_25_disc" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_3_25_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP__3_5" class="control-label"></label>
+                <input asp-for="HOME_HDP__3_5" class="form-control" />
+                <span asp-validation-for="HOME_HDP__3_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_3_5" class="control-label"></label>
+                <input asp-for="AWAY_HDP_3_5" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_3_5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP__3_5_computed" class="control-label"></label>
+                <input asp-for="HOME_HDP__3_5_computed" class="form-control" />
+                <span asp-validation-for="HOME_HDP__3_5_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_3_5_computed" class="control-label"></label>
+                <input asp-for="AWAY_HDP_3_5_computed" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_3_5_computed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HOME_HDP__3_5_disc" class="control-label"></label>
+                <input asp-for="HOME_HDP__3_5_disc" class="form-control" />
+                <span asp-validation-for="HOME_HDP__3_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AWAY_HDP_3_5_disc" class="control-label"></label>
+                <input asp-for="AWAY_HDP_3_5_disc" class="form-control" />
+                <span asp-validation-for="AWAY_HDP_3_5_disc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
