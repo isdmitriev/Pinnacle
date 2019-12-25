@@ -73,7 +73,7 @@ namespace PinnacleClasses.Converters
 
             this.SetMoneyLinePricesToDatabase(moneyLine);
             //this.SetDoubleChanceToDatabasePrices(doubleChance);
-          
+
             this.SetTotalPricesToDatabase(totals);
 
             //this.SetHomeTeamTotalPricesTodatabase(homeTotal);

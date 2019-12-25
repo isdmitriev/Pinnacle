@@ -85,7 +85,7 @@ namespace PinnacleClasses.Mongodb
         {
             client = new MongoClient(this.connectionString);
             database = client.GetDatabase("PinnacleDatabase");
-            Data = database.GetCollection<PinData>("Live_Last");
+            Data = database.GetCollection<PinData>("Last");
         }
 
         public void Add(PinData data)

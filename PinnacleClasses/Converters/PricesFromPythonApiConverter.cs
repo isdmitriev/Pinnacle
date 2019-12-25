@@ -123,21 +123,21 @@ namespace PinnacleClasses.Converters
             foreach (KeyValuePair<string, decimal> keyValuePair in prices)
             {
                 decimal price;
-                if (keyValuePair.Key.Equals("1X") == true)
+                if (keyValuePair.Key.Equals("DC 1X") == true)
                 {
 
                     price = keyValuePair.Value;
                     oddEvent.Periods[0].DoubleChance.HomeDrawComputed = price;
                 }
 
-                if (keyValuePair.Key.Equals("X2") == true)
+                if (keyValuePair.Key.Equals("DC X2") == true)
                 {
 
                     price = keyValuePair.Value;
                     oddEvent.Periods[0].DoubleChance.AwayDrawComputed = price;
                 }
 
-                if (keyValuePair.Key.Equals("12") == true)
+                if (keyValuePair.Key.Equals("DC 12") == true)
                 {
                     price = keyValuePair.Value;
                     oddEvent.Periods[0].DoubleChance.HomeAwayComputed = price;

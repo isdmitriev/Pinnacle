@@ -76,17 +76,17 @@ namespace PinnacleClasses.Tasks
             this._context.Dispose();
         }
 
- 
+
         public void SetComputedLivePinnaclePricesToDatabase()
         {
 
 
-            
+
 
             List<PinacclePrices> convertedPrices = new List<PinacclePrices>();
-                var task = this._pinnacleEventsFilter.LoadIntrestingEventsFromPinnacleAsync(true);
-                task.Wait();
-                List<OddEvent> _intrestingEvents = task.Result;
+            var task = this._pinnacleEventsFilter.LoadIntrestingEventsFromPinnacleAsync(true);
+            task.Wait();
+            List<OddEvent> _intrestingEvents = task.Result;
 
             foreach (OddEvent oddEvent in _intrestingEvents)
             {
@@ -97,9 +97,10 @@ namespace PinnacleClasses.Tasks
 
                 Dictionary<string, decimal> computedPricesDict = this.GetCoefsFromApi(oddEvent);
 
+
+
                 if (computedPricesDict != null)
                 {
-
 
                     this._pricesFromPythonApiConverter.ConvertPrices(computedPricesDict, oddEvent);
                     convertedPrices.Add(this._pricesToDatabaseConverter.ConvertPinnacleEventToDatabasePrices(oddEvent));
@@ -108,11 +109,11 @@ namespace PinnacleClasses.Tasks
 
                     this._mongoDbRepository.AddEvent(oddEvent);
                     EventLiveIdsListSinglton.AddId(eventId);
-
-
-
                 }
+
+
             }
+
 
 
             this._context.Prices.AddRange(convertedPrices);
@@ -186,7 +187,7 @@ namespace PinnacleClasses.Tasks
 
                 this._context.Prices.AddRange(convertedPrices);
                 this._context.SaveChanges();
-                
+               
                 this._context.Dispose();
 
                 

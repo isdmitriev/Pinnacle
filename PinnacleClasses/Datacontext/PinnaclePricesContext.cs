@@ -23,7 +23,7 @@ namespace PinnacleClasses.Datacontext
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 
-            optionsBuilder.UseSqlServer(@"Server=ADMINRG-7G5H33A;Database=PinnaclePrices_current2;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=ADMINRG-7G5H33A;Database=PinnaclePrices_Last;Trusted_Connection=True;");
 
 
 
