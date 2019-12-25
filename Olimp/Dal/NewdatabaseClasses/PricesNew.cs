@@ -34,9 +34,13 @@ namespace Olimp.Dal.NewdatabaseClasses
     }
 
 
-   public class PricesNew
+   public class OlimpPrices
     {
-        
+
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+
+        public int Id { get; set; }
         public DateTime QueueTime { get; set; }
         public string EventName { get; set; }
 

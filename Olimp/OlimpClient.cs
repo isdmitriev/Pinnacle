@@ -435,7 +435,7 @@ namespace Olimp
                 olimpOddEvent.AwayTeam = olimpEvent.AwayTeam;
                 olimpOddEvent.LeagueName = olimpEvent.LeagueName;
                 olimpOddEvent.StartDate = olimpEvent.StartDate;
-                olimpOddEvent.DateAdded = DateTime.Now.ToString();
+                olimpOddEvent.DateAdded = DateTime.Now;
 
                 return olimpOddEvent;
 

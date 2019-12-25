@@ -8,49 +8,10 @@ using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-
+using Olimp.Dal.NewdatabaseClasses;
 
 namespace Olimp.Dal.Dbcontext
 {
-
-
-    public class OlimpFullLinePricesContext : DbContext
-    {
-        public DbSet<OlimpPrices> Prices { get; set; }
-
-        public OlimpFullLinePricesContext()
-        {
-
-
-            Database.EnsureCreated();
-
-
-
-
-        }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-
-            optionsBuilder.UseSqlServer(@"Server=ADMINRG-7G5H33A;Database=OlimpTestFull;Trusted_Connection=True;");
-        }
-
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            foreach (var property in modelBuilder.Model.GetEntityTypes()
-            .SelectMany(t => t.GetProperties())
-            .Where(p => p.ClrType == typeof(decimal) || p.ClrType == typeof(decimal?)))
-            {
-                property.Relational().ColumnType = "decimal(18,7)";
-            }
-
-
-        }
-
-
-    }
-
 
 
     public class OlimpPricesContext : DbContext
@@ -71,7 +32,7 @@ namespace Olimp.Dal.Dbcontext
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 
-            optionsBuilder.UseSqlServer(@"Server=ADMINRG-7G5H33A;Database=OlimpTest;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=ADMINRG-7G5H33A;Database=OlimpTesNewSchema;Trusted_Connection=True;");
         }
 
 
@@ -81,15 +42,58 @@ namespace Olimp.Dal.Dbcontext
             .SelectMany(t => t.GetProperties())
             .Where(p => p.ClrType == typeof(decimal) || p.ClrType == typeof(decimal?)))
             {
-                property.Relational().ColumnType = "decimal(18,7)";
+                property.Relational().ColumnType = "decimal(18,4)";
             }
 
 
         }
-
-
     }
+
+    public class OlimpPricesFullLineContext : DbContext
+    {
+        public DbSet<OlimpPrices> Prices { get; set; }
+
+        public OlimpPricesFullLineContext()
+        {
+
+
+            Database.EnsureCreated();
+
+
+
+
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+
+            optionsBuilder.UseSqlServer(@"Server=ADMINRG-7G5H33A;Database=OlimpTesNewSchemaFullLine;Trusted_Connection=True;");
+        }
+
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            foreach (var property in modelBuilder.Model.GetEntityTypes()
+            .SelectMany(t => t.GetProperties())
+            .Where(p => p.ClrType == typeof(decimal) || p.ClrType == typeof(decimal?)))
+            {
+                property.Relational().ColumnType = "decimal(18,4)";
+            }
+
+
+        }
+    }
+
+
 }
+
+
+    
+
+
+
+   
+
 
 
    

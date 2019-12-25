@@ -6,15 +6,21 @@ using Olimp.Converters;
 using Olimp.Dto;
 using Olimp.Singletons;
 using Olimp.Dal;
+using Olimp.Dal.Repositories;
+using Olimp.Dal.NewdatabaseClasses;
 namespace Olimp
 {
     class EventsHandler
     {
         private readonly IOlimpclient _olimpClient = new OlimpClient();
-        private readonly IPricesToDatabaseConverter _pricesToDatabaseConverter = new PricesToDatabaseConverter();
 
-        private readonly OlimpPricesContext _pricesContext = new OlimpPricesContext();
-        private readonly OlimpFullLinePricesContext _fullLinePricesContext = new OlimpFullLinePricesContext();
+
+        private readonly IOlimpPricesRepository _olimpPricesRepository = new OlimpPricesRepository();
+
+        private readonly IOlimpFullLinePricesRepository _olimpFullLinePricesRepository = new OlimpFullLinePricesRepository();
+        private readonly IOlimpOddEventToPricesNewConverter _olimpOddEventToPricesConverter=new OlimpOddEventToPricesConverter();
+        
+        
 
         private readonly OlimpDatetimeconverter _datetimeconverter = new OlimpDatetimeconverter();
 
@@ -26,14 +32,15 @@ namespace Olimp
         public void SaveOlimpEvents()
         {
             List<OlimpOddEvent> events = this._olimpClient.GetOdds().Result;
-
+            List<OlimpPrices> resultPrices = new List<OlimpPrices>();
             foreach(OlimpOddEvent olimpOdd in events)
             {
-                this._fullLinePricesContext.Prices.Add(this._pricesToDatabaseConverter.Convert(olimpOdd));
+                resultPrices.AddRange(this._olimpOddEventToPricesConverter.Convert(olimpOdd));
             }
 
-            this._fullLinePricesContext.SaveChanges();
-            this._fullLinePricesContext.Dispose();
+            this._olimpFullLinePricesRepository.AddRange(resultPrices);
+
+          
 
             
         }
@@ -70,14 +77,15 @@ namespace Olimp
             List<OlimpPrices> prices = new List<OlimpPrices>();
             foreach(OlimpOddEvent olimpOdd in olimpOddEvents)
             {
-                prices.Add(this._pricesToDatabaseConverter.Convert(olimpOdd));
+                prices.AddRange(this._olimpOddEventToPricesConverter.Convert(olimpOdd));
 
                 EventIdsListSingleton.AddId(olimpOdd.EventId);
             }
 
-            this._pricesContext.Prices.AddRange(prices);
-            this._pricesContext.SaveChanges();
-            this._pricesContext.Dispose();
+            this._olimpPricesRepository.AddRange(prices);
+
+          
+           
         }
     }
 }

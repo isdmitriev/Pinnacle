@@ -9,17 +9,17 @@ namespace Olimp.Converters
 {
     public interface IPricesToDatabaseConverter
     {
-        OlimpPrices Convert(OlimpOddEvent olimpOddEvent);
+        OlimpPrice Convert(OlimpOddEvent olimpOddEvent);
     }
     public class PricesToDatabaseConverter : IPricesToDatabaseConverter
     {
         private IList<PropertyInfo> properties;
-        private OlimpPrices olimpPrices;
+        private OlimpPrice olimpPrices;
 
        
-        public OlimpPrices Convert(OlimpOddEvent olimpOddEvent)
+        public OlimpPrice Convert(OlimpOddEvent olimpOddEvent)
         {
-            this.olimpPrices = new OlimpPrices();
+            this.olimpPrices = new OlimpPrice();
 
             this.olimpPrices.IsLive = false;
 

@@ -8,7 +8,7 @@ namespace Olimp.Dto
     {
 
         public string EventId { get; set; }
-        public string DateAdded { get; set; }
+        public DateTime DateAdded { get; set; }
 
         public string StartDate { get; set; }
         public string HomeTeam { get; set; }

@@ -8,7 +8,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 namespace Olimp.Dal
 {
-   public class OlimpPrices
+    //{
+    public class OlimpPrice
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -21,7 +22,7 @@ namespace Olimp.Dal
 
 
 
-        public string DateAdded { get; set; }
+        public DateTime DateAdded { get; set; }
         public bool? IsLive { get; set; }
         public string StartTime { get; set; }
         public string HomeTeam { get; set; }
@@ -459,8 +460,8 @@ namespace Olimp.Dal
         [JsonProperty("AWAY_HDP -2,5")]
         public Nullable<decimal> AWAY_HDP__2_5 { get; set; }
 
-      
-      
+
+
         [DisplayFormat(DataFormatString = "{0:F7}")]
 
         [Column("HOME_HDP 2,0")]
@@ -473,8 +474,8 @@ namespace Olimp.Dal
         public Nullable<decimal> AWAY_HDP__2_0 { get; set; }
 
 
-      
-      
+
+
 
 
         [DisplayFormat(DataFormatString = "{0:F7}")]
@@ -487,9 +488,9 @@ namespace Olimp.Dal
         [Column("AWAY_HDP -1,75")]
         [JsonProperty("AWAY_HDP -1,75")]
         public Nullable<decimal> AWAY_HDP__1_75 { get; set; }
-       
-        
-       
+
+
+
         [DisplayFormat(DataFormatString = "{0:F7}")]
 
         [Column("HOME_HDP 1,5")]
@@ -501,7 +502,7 @@ namespace Olimp.Dal
         public Nullable<decimal> AWAY_HDP__1_5 { get; set; }
 
 
-       
+
 
 
         [DisplayFormat(DataFormatString = "{0:F7}")]
@@ -512,8 +513,8 @@ namespace Olimp.Dal
         [Column("AWAY_HDP -1,0")]
         [JsonProperty("AWAY_HDP -1,0")]
         public Nullable<decimal> AWAY_HDP__1_0 { get; set; }
-      
-  
+
+
         [DisplayFormat(DataFormatString = "{0:F7}")]
 
         [Column("HOME_HDP 0,75")]
@@ -523,7 +524,7 @@ namespace Olimp.Dal
         [Column("AWAY_HDP -0,75")]
         [JsonProperty("AWAY_HDP -0,75")]
         public Nullable<decimal> AWAY_HDP__0_75 { get; set; }
-      
+
         [DisplayFormat(DataFormatString = "{0:F7}")]
 
 

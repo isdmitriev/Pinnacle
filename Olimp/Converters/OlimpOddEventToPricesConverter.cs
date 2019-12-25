@@ -9,29 +9,55 @@ namespace Olimp.Converters
 {
     public interface IOlimpOddEventToPricesNewConverter
     {
-        List<PricesNew> Convert(OlimpOddEvent oddEvent);
+        List<OlimpPrices> Convert(OlimpOddEvent oddEvent);
     }
 
     public class OlimpOddEventToPricesConverter : IOlimpOddEventToPricesNewConverter
     {
-        public List<PricesNew> Convert(OlimpOddEvent oddEvent)
+        public List<OlimpPrices> Convert(OlimpOddEvent oddEvent)
         {
-            List<PricesNew> _resultPrices = new List<PricesNew>();
+            List<OlimpPrices> _resultPrices = new List<OlimpPrices>();
+
+
+            _resultPrices.AddRange(this.ConvertMoneyLine(oddEvent));
+            _resultPrices.AddRange(this.ConvertDoubleChance(oddEvent));
+            _resultPrices.AddRange(this.ConvertTotals(oddEvent));
+            _resultPrices.AddRange(this.ConvertHandicaps(oddEvent));
+            _resultPrices.AddRange(this.ConvertHomeTeamTotals(oddEvent));
+            _resultPrices.AddRange(this.ConvertAwayTeamTotals(oddEvent));
+
+            foreach(OlimpPrices pricesNew in _resultPrices)
+            {
+                this.SetPricesParameters(oddEvent,pricesNew);
+            }
 
             return _resultPrices;
         }
 
-        private List<PricesNew> ConvertMoneyLine(OlimpOddEvent olimpOddEvent)
+        private string GetEventName(string homeTeam,string awayTeam)
         {
-            List<PricesNew> pricesNewsMoneyLine = new List<PricesNew>();
+            return homeTeam + " - " + awayTeam;
+        }
+
+        private void SetPricesParameters(OlimpOddEvent olimpOddEvent,OlimpPrices prices)
+        {
+            prices.EventId = olimpOddEvent.EventId;
+            prices.StartTime = olimpOddEvent.StartDate;
+            prices.LeagueName = olimpOddEvent.LeagueName;
+            prices.EventName = this.GetEventName(olimpOddEvent.HomeTeam, olimpOddEvent.AwayTeam);
+            prices.QueueTime = olimpOddEvent.DateAdded;
+        }
+        private List<OlimpPrices> ConvertMoneyLine(OlimpOddEvent olimpOddEvent)
+        {
+            List<OlimpPrices> pricesNewsMoneyLine = new List<OlimpPrices>();
 
             MarketKindName marketKindName = MarketKindName.ThreeWay;
 
             IList<PropertyInfo> properties = olimpOddEvent.moneyLine.GetType().GetProperties();
             foreach(PropertyInfo property in properties)
             {
-                PricesNew prices = new PricesNew();
-                prices.LeagueName = olimpOddEvent.LeagueName;
+                OlimpPrices prices = new OlimpPrices();
+               
 
 
                 prices.MarketKindName = marketKindName;
@@ -59,17 +85,17 @@ namespace Olimp.Converters
             return pricesNewsMoneyLine;
         }
 
-        private List<PricesNew> ConvertDoubleChance(OlimpOddEvent olimpOddEvent)
+        private List<OlimpPrices> ConvertDoubleChance(OlimpOddEvent olimpOddEvent)
         {
-            List<PricesNew> pricesNewDoubleChance = new List<PricesNew>();
+            List<OlimpPrices> pricesNewDoubleChance = new List<OlimpPrices>();
 
             MarketKindName marketKindName = MarketKindName.DoubleChance;
 
             IList<PropertyInfo> properties = olimpOddEvent.doubleChance.GetType().GetProperties();
             foreach (PropertyInfo property in properties)
             {
-                PricesNew prices = new PricesNew();
-                prices.LeagueName = olimpOddEvent.LeagueName;
+                OlimpPrices prices = new OlimpPrices();
+                
 
 
                 prices.MarketKindName = marketKindName;
@@ -97,10 +123,10 @@ namespace Olimp.Converters
             return pricesNewDoubleChance;
         }
 
-        private List<PricesNew> ConvertHandicaps(OlimpOddEvent olimpOddEvent)
+        private List<OlimpPrices> ConvertHandicaps(OlimpOddEvent olimpOddEvent)
         {
 
-            List<PricesNew> result = new List<PricesNew>();
+            List<OlimpPrices> result = new List<OlimpPrices>();
 
             MarketKindName marketKindName = MarketKindName.Handicap;
             foreach(Handicap handicap in olimpOddEvent.Handicaps)
@@ -111,7 +137,7 @@ namespace Olimp.Converters
 
                 foreach(PropertyInfo property in properties)
                 {
-                    PricesNew pricesNew = new PricesNew();
+                    OlimpPrices pricesNew = new OlimpPrices();
                     if(property.Name== "HDPHOME")
                     {
                         pricesNew.MarketKindName = marketKindName;
@@ -138,9 +164,9 @@ namespace Olimp.Converters
             
         }
 
-        private List<PricesNew> ConvertTotals(OlimpOddEvent olimpOddEvent)
+        private List<OlimpPrices> ConvertTotals(OlimpOddEvent olimpOddEvent)
         {
-            List<PricesNew> result = new List<PricesNew>();
+            List<OlimpPrices> result = new List<OlimpPrices>();
 
             MarketKindName marketKindName = MarketKindName.Total;
 
@@ -150,7 +176,7 @@ namespace Olimp.Converters
 
                 foreach(PropertyInfo property in properties)
                 {
-                    PricesNew pricesNew = new PricesNew();
+                    OlimpPrices pricesNew = new OlimpPrices();
                     pricesNew.MarketKindName = marketKindName;
                     if (property.Name == "Over")
                     {
@@ -174,9 +200,9 @@ namespace Olimp.Converters
             return result;
         }
 
-        private List<PricesNew> ConvertHomeTeamTotals(OlimpOddEvent olimpOddEvent)
+        private List<OlimpPrices> ConvertHomeTeamTotals(OlimpOddEvent olimpOddEvent)
         {
-            List<PricesNew> result = new List<PricesNew>();
+            List<OlimpPrices> result = new List<OlimpPrices>();
             MarketKindName marketKindName = MarketKindName.HomeTeamTotal;
 
             foreach(Total total in olimpOddEvent.HomeTotals)
@@ -185,7 +211,7 @@ namespace Olimp.Converters
 
                 foreach(PropertyInfo property in properties)
                 {
-                    PricesNew pricesNew = new PricesNew();
+                    OlimpPrices pricesNew = new OlimpPrices();
                     pricesNew.MarketKindName = marketKindName;
 
                     if (property.Name == "Over")
@@ -212,9 +238,9 @@ namespace Olimp.Converters
 
         }
 
-        private List<PricesNew> ConvertAwayTeamTotals(OlimpOddEvent olimpOddEvent)
+        private List<OlimpPrices> ConvertAwayTeamTotals(OlimpOddEvent olimpOddEvent)
         {
-            List<PricesNew> result = new List<PricesNew>();
+            List<OlimpPrices> result = new List<OlimpPrices>();
             MarketKindName marketKindName = MarketKindName.AwayTeamTotal;
 
             foreach (Total total in olimpOddEvent.AwayTotals)
@@ -223,7 +249,7 @@ namespace Olimp.Converters
 
                 foreach (PropertyInfo property in properties)
                 {
-                    PricesNew pricesNew = new PricesNew();
+                    OlimpPrices pricesNew = new OlimpPrices();
                     pricesNew.MarketKindName = marketKindName;
 
                     if (property.Name == "Over")
