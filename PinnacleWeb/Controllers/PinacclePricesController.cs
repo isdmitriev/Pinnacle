@@ -42,22 +42,7 @@ namespace PinnacleWeb.Controllers
 
         public  IActionResult Excel()
         {
-            //int count = this._context.Prices.Count() - 30000;
-            //DataTable tab = PinacclePricesTodatatableConverter.ConvertPinacclePricesTodataTable(await this._context.Prices.ToListAsync());
-
-            //tab.TableName = "pinnacleprices";
-            //string fileName = "Sample.xlsx";
-            //using (XLWorkbook wb = new XLWorkbook())
-            //{
-
-            //    wb.Worksheets.Add(tab);
-            //    using (MemoryStream stream = new MemoryStream())
-            //    {
-            //        wb.SaveAs(stream);
-
-            //        return File(stream.ToArray(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", fileName);
-            //    }
-            //}
+           
 
 
 

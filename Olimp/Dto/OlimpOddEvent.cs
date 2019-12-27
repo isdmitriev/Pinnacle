@@ -10,7 +10,7 @@ namespace Olimp.Dto
         public string EventId { get; set; }
         public DateTime DateAdded { get; set; }
 
-        public string StartDate { get; set; }
+        public DateTime ? StartDate { get; set; }
         public string HomeTeam { get; set; }
         public string AwayTeam { get; set; }
         public string LeagueName { get; set; }

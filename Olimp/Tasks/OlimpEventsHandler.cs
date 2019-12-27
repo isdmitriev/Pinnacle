@@ -87,12 +87,12 @@ namespace Olimp.Tasks
 
         private ITrigger trigger = TriggerBuilder.Create()
                             .WithIdentity("trigger1", "group1")
-                            .StartNow().WithSimpleSchedule(x => x.WithIntervalInSeconds(10).RepeatForever()).Build();
+                            .StartNow().WithSimpleSchedule(x => x.WithIntervalInSeconds(5).RepeatForever()).Build();
 
 
         private ITrigger trigger2 = TriggerBuilder.Create()
                           .WithIdentity("trigger1", "group2")
-                          .StartNow().WithSimpleSchedule(x => x.WithIntervalInSeconds(10).RepeatForever()).Build();
+                          .StartNow().WithSimpleSchedule(x => x.WithIntervalInSeconds(5).RepeatForever()).Build();
 
         public OlimpEventsSheduler()
         {

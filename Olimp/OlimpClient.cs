@@ -41,7 +41,7 @@ namespace Olimp
     {
         public string EventId { get; set; }
         public string Dateadded { get; set; }
-        public string StartDate { get; set; }
+        public DateTime ? StartDate { get; set; }
         public string HomeTeam { get; set; }
         public string AwayTeam { get; set; }
         public string LeagueName { get; set; }
@@ -466,13 +466,15 @@ namespace Olimp
             OlimpEvent olimpEvent = new OlimpEvent();
             olimpEvent.EventId = this.GetAtributeValueByName(eventInformContainer, "data-id");
 
-            olimpEvent.StartDate = eventInformContainer.ChildNodes[1].ChildNodes[1].ChildNodes[1].InnerText.Replace("&nbsp;", " ");
+            string StartDate = eventInformContainer.ChildNodes[1].ChildNodes[1].ChildNodes[1].InnerText.Replace("&nbsp;", " ");
 
             string teams = eventInformContainer.ChildNodes[1].ChildNodes[1].ChildNodes[3].InnerText;
 
             var eventTeams = this.GetHomeAwayTeams(teams);
             olimpEvent.HomeTeam = eventTeams.HomeTeam;
             olimpEvent.AwayTeam = eventTeams.AwayTeam;
+
+            olimpEvent.StartDate = new OlimpDatetimeconverter().GetDateTimeFull(StartDate);
 
             return olimpEvent;
 

@@ -60,22 +60,22 @@ namespace Olimp.Converters
                
 
 
-                prices.MarketKindName = marketKindName;
+                prices.MarketKindName = marketKindName.ToString();
                 if (property.Name == "Home")
                 {
                     
-                    prices.SelectionKindName = SelectionKindName.Home;
+                    prices.SelectionKindName = SelectionKindName.Home.ToString();
                     prices.Price = olimpOddEvent.moneyLine.Home;
                 }
                 else if (property.Name == "Draw")
                 {
-                    prices.SelectionKindName = SelectionKindName.Draw;
+                    prices.SelectionKindName = SelectionKindName.Draw.ToString();
                     prices.Price = olimpOddEvent.moneyLine.Draw;
                 }
 
                 else
                 {
-                    prices.SelectionKindName = SelectionKindName.Away;
+                    prices.SelectionKindName = SelectionKindName.Away.ToString();
                     prices.Price = olimpOddEvent.moneyLine.Away;
                 }
 
@@ -98,22 +98,22 @@ namespace Olimp.Converters
                 
 
 
-                prices.MarketKindName = marketKindName;
+                prices.MarketKindName = marketKindName.ToString();
                 if (property.Name == "HomeDraw")
                 {
 
-                    prices.SelectionKindName = SelectionKindName.HomeDraw;
+                    prices.SelectionKindName = SelectionKindName.HomeDraw.ToString();
                     prices.Price = olimpOddEvent.doubleChance.HomeDraw;
                 }
                 else if (property.Name == "AwayDraw")
                 {
-                    prices.SelectionKindName = SelectionKindName.AwayDraw;
+                    prices.SelectionKindName = SelectionKindName.AwayDraw.ToString();
                     prices.Price = olimpOddEvent.doubleChance.AwayDraw;
                 }
 
                 else
                 {
-                    prices.SelectionKindName = SelectionKindName.HomeAway;
+                    prices.SelectionKindName = SelectionKindName.HomeAway.ToString();
                     prices.Price = olimpOddEvent.doubleChance.HomeAway;
                 }
 
@@ -140,18 +140,18 @@ namespace Olimp.Converters
                     OlimpPrices pricesNew = new OlimpPrices();
                     if(property.Name== "HDPHOME")
                     {
-                        pricesNew.MarketKindName = marketKindName;
-                        pricesNew.MarketValue= (decimal)property.GetValue(handicap);
-                        pricesNew.SelectionKindName = SelectionKindName.Home;
+                        pricesNew.MarketKindName = marketKindName.ToString();
+                        pricesNew.MarketValue= (decimal ?)property.GetValue(handicap);
+                        pricesNew.SelectionKindName = SelectionKindName.Home.ToString();
                         pricesNew.Price = handicap.HOME;
 
                         result.Add(pricesNew);
                     }
                     else if(property.Name== "HDPAWAY")
                     {
-                        pricesNew.MarketKindName = marketKindName;
-                        pricesNew.MarketValue =(decimal) property.GetValue(handicap);
-                        pricesNew.SelectionKindName = SelectionKindName.Away;
+                        pricesNew.MarketKindName = marketKindName.ToString();
+                        pricesNew.MarketValue =(decimal ?) property.GetValue(handicap);
+                        pricesNew.SelectionKindName = SelectionKindName.Away.ToString();
                         pricesNew.Price = handicap.AWAY;
 
                         result.Add(pricesNew);
@@ -177,10 +177,10 @@ namespace Olimp.Converters
                 foreach(PropertyInfo property in properties)
                 {
                     OlimpPrices pricesNew = new OlimpPrices();
-                    pricesNew.MarketKindName = marketKindName;
+                    pricesNew.MarketKindName = marketKindName.ToString();
                     if (property.Name == "Over")
                     {
-                        pricesNew.SelectionKindName = SelectionKindName.Over;
+                        pricesNew.SelectionKindName = SelectionKindName.Over.ToString();
                         pricesNew.MarketValue = total.Points;
                         pricesNew.Price = total.Over;
 
@@ -189,7 +189,7 @@ namespace Olimp.Converters
 
                     else if (property.Name == "Under")
                     {
-                        pricesNew.SelectionKindName = SelectionKindName.Under;
+                        pricesNew.SelectionKindName = SelectionKindName.Under.ToString();
                         pricesNew.MarketValue = total.Points;
                         pricesNew.Price = total.Under;
                         result.Add(pricesNew);
@@ -212,11 +212,11 @@ namespace Olimp.Converters
                 foreach(PropertyInfo property in properties)
                 {
                     OlimpPrices pricesNew = new OlimpPrices();
-                    pricesNew.MarketKindName = marketKindName;
+                    pricesNew.MarketKindName = marketKindName.ToString();
 
                     if (property.Name == "Over")
                     {
-                        pricesNew.SelectionKindName = SelectionKindName.Over;
+                        pricesNew.SelectionKindName = SelectionKindName.Over.ToString();
                         pricesNew.Price = total.Over;
                         pricesNew.MarketValue = total.Points;
 
@@ -225,7 +225,7 @@ namespace Olimp.Converters
 
                     else if (property.Name == "Under")
                     {
-                        pricesNew.SelectionKindName = SelectionKindName.Under;
+                        pricesNew.SelectionKindName = SelectionKindName.Under.ToString();
                         pricesNew.Price = total.Under;
                         pricesNew.MarketValue = total.Points;
 
@@ -250,11 +250,11 @@ namespace Olimp.Converters
                 foreach (PropertyInfo property in properties)
                 {
                     OlimpPrices pricesNew = new OlimpPrices();
-                    pricesNew.MarketKindName = marketKindName;
+                    pricesNew.MarketKindName = marketKindName.ToString();
 
                     if (property.Name == "Over")
                     {
-                        pricesNew.SelectionKindName = SelectionKindName.Over;
+                        pricesNew.SelectionKindName = SelectionKindName.Over.ToString();
                         pricesNew.Price = total.Over;
                         pricesNew.MarketValue = total.Points;
 
@@ -263,7 +263,7 @@ namespace Olimp.Converters
 
                     else if (property.Name == "Under")
                     {
-                        pricesNew.SelectionKindName = SelectionKindName.Under;
+                        pricesNew.SelectionKindName = SelectionKindName.Under.ToString();
                         pricesNew.Price = total.Under;
                         pricesNew.MarketValue = total.Points;
 

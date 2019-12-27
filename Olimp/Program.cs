@@ -9,13 +9,14 @@ using Olimp.Tasks;
 using System.Globalization;
 using Olimp.Singletons;
 using Olimp.Dal.Dbcontext;
+
+
 namespace Olimp
 {
     class Program
     {
         static void Main(string[] args)
         {
-
             
             Console.ReadLine();
         }

@@ -32,17 +32,21 @@ namespace Olimp
         public void SaveOlimpEvents()
         {
             List<OlimpOddEvent> events = this._olimpClient.GetOdds().Result;
+
+
             List<OlimpPrices> resultPrices = new List<OlimpPrices>();
-            foreach(OlimpOddEvent olimpOdd in events)
+            foreach (OlimpOddEvent olimpOdd in events)
             {
                 resultPrices.AddRange(this._olimpOddEventToPricesConverter.Convert(olimpOdd));
             }
 
             this._olimpFullLinePricesRepository.AddRange(resultPrices);
-
-          
-
+            this._olimpFullLinePricesRepository.Dispose();
             
+
+
+
+
         }
 
         public void SaveTodayPrematchOlimpEvents()
@@ -53,11 +57,12 @@ namespace Olimp
 
             foreach (OlimpEvent olimp in events)
             {
-                var result = this._datetimeconverter.GetDateTime(olimp);
-                if (result.startTime != null)
-                {
-                    double discStartTime = result.timeDisc;
+                
+                
+                
+                    
                     string eventId = olimp.EventId;
+                double discStartTime = this._datetimeconverter.timedisc((DateTime)olimp.StartDate);
 
                     if(discStartTime<=120 && discStartTime > 1)
                     {
@@ -71,7 +76,7 @@ namespace Olimp
 
                     }
                 }
-            }
+            
 
             List<OlimpOddEvent> olimpOddEvents = this._olimpClient.GetTodayPrematchOdds(events2).Result;
             List<OlimpPrices> prices = new List<OlimpPrices>();
@@ -83,6 +88,8 @@ namespace Olimp
             }
 
             this._olimpPricesRepository.AddRange(prices);
+            this._olimpPricesRepository.Dispose();
+            
 
           
            

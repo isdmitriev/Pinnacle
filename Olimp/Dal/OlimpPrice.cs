@@ -24,7 +24,7 @@ namespace Olimp.Dal
 
         public DateTime DateAdded { get; set; }
         public bool? IsLive { get; set; }
-        public string StartTime { get; set; }
+        public DateTime ? StartTime { get; set; }
         public string HomeTeam { get; set; }
         public string AwayTeam { get; set; }
         public string LeagueName { get; set; }

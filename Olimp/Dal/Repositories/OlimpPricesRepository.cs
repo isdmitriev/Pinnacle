@@ -21,6 +21,8 @@ namespace Olimp.Dal.Repositories
         Task AddAsync(OlimpPrices pricesNew);
 
         void Delete(OlimpPrices pricesNew);
+
+        void Dispose();
         
 
     }
@@ -37,6 +39,8 @@ namespace Olimp.Dal.Repositories
         Task AddAsync(OlimpPrices pricesNew);
 
         void Delete(OlimpPrices pricesNew);
+
+        void Dispose();
 
 
     }
@@ -60,9 +64,14 @@ namespace Olimp.Dal.Repositories
 
         public void AddRange(List<OlimpPrices> prices)
         {
-            this._pricesContext.AddRange(prices);
-            this._pricesContext.SaveChanges();
-            this._pricesContext.Dispose();
+            
+            foreach(OlimpPrices olimpPrices in prices)
+            {
+                this._pricesContext.Add(olimpPrices);
+                this._pricesContext.SaveChanges();
+            }
+            
+            
 
             
         }
@@ -90,6 +99,11 @@ namespace Olimp.Dal.Repositories
             this._pricesContext.Prices.Remove(pricesNew2);
             this._pricesContext.SaveChanges();
         }
+
+        public void Dispose()
+        {
+            this._pricesContext.Dispose();
+        }
     }
 
 
@@ -112,9 +126,13 @@ namespace Olimp.Dal.Repositories
 
         public void AddRange(List<OlimpPrices> prices)
         {
-            this._fullLineContext.Prices.AddRange(prices);
-            this._fullLineContext.SaveChanges();
-            this._fullLineContext.Dispose();
+            foreach(OlimpPrices pricestwo in prices)
+            {
+                this._fullLineContext.Prices.Add(pricestwo);
+                this._fullLineContext.SaveChanges();
+            }
+            
+          
         }
 
         public async Task AddRangeAsync(List<OlimpPrices> prices)
@@ -139,6 +157,11 @@ namespace Olimp.Dal.Repositories
         {
             List<OlimpPrices> result = this._fullLineContext.Prices.ToList();
             return result;
+        }
+
+        public void Dispose()
+        {
+            this._fullLineContext.Dispose();
         }
     }
 }

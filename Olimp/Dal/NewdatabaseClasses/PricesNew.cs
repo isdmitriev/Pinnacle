@@ -44,7 +44,7 @@ namespace Olimp.Dal.NewdatabaseClasses
         public DateTime QueueTime { get; set; }
         public string EventName { get; set; }
 
-        public string StartTime { get; set; }
+        public DateTime ? StartTime { get; set; }
         public string  EventId { get; set; }
 
         public string LeagueName { get; set; }
@@ -52,9 +52,9 @@ namespace Olimp.Dal.NewdatabaseClasses
         public decimal ? Price { get; set; }
         public decimal ? MarketValue { get; set; }
 
-        public MarketKindName MarketKindName { get; set; }
+        public string MarketKindName { get; set; }
 
-        public SelectionKindName SelectionKindName { get; set; }
+        public string SelectionKindName { get; set; }
 
 
 
