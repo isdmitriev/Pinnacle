@@ -41,6 +41,7 @@ namespace Olimp
             }
 
             this._olimpFullLinePricesRepository.AddRange(resultPrices);
+            
             this._olimpFullLinePricesRepository.Dispose();
             
 
@@ -88,6 +89,7 @@ namespace Olimp
             }
 
             this._olimpPricesRepository.AddRange(prices);
+           
             this._olimpPricesRepository.Dispose();
             
 

@@ -375,6 +375,8 @@ namespace Olimp
                                         }
 
                                     }
+
+
                                     if (type == "HANDICAP RESULT")
                                     {
                                         Handicap h = this.GetHandicap(node, olimpEvent.EventId);
@@ -405,6 +407,25 @@ namespace Olimp
                                             homeTotals = result.home;
                                         }
 
+                                    }
+
+                                    if(type== "Asian Total")
+                                    {
+                                        List<Total> totalsresult = this.GetTotalGoals(node, olimpEvent.EventId);
+                                        if (totalsresult != null)
+                                        {
+                                            totals.AddRange(totalsresult);
+                                        }
+
+
+                                    }
+                                    if(type== "Asian Handicap")
+                                    {
+                                        List<Handicap> hdpsResults = this.GetHandicaps(node, olimpEvent.EventId);
+                                        if (hdpsResults != null)
+                                        {
+                                            handicaps.AddRange(hdpsResults);
+                                        }
                                     }
 
 
