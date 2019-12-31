@@ -9,6 +9,8 @@ using Olimp.Tasks;
 using System.Globalization;
 using Olimp.Singletons;
 using Olimp.Dal.Dbcontext;
+using Olimp.Dal.NewdatabaseClasses;
+using Z.BulkOperations;
 
 
 namespace Olimp

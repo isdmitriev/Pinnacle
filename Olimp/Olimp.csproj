@@ -9,6 +9,7 @@
     <PackageReference Include="Fizzler.Systems.HtmlAgilityPack" Version="1.2.0" />
     <PackageReference Include="HtmlAgilityPack" Version="1.11.17" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.1.11" />
+    <PackageReference Include="Z.EntityFramework.Extensions.EFCore" Version="2.7.34" />
   </ItemGroup>
 
   <ItemGroup>

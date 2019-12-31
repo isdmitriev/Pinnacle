@@ -40,7 +40,7 @@ namespace Olimp
                 resultPrices.AddRange(this._olimpOddEventToPricesConverter.Convert(olimpOdd));
             }
 
-            this._olimpFullLinePricesRepository.AddRange(resultPrices);
+            this._olimpFullLinePricesRepository.AddRange2(resultPrices);
             
             this._olimpFullLinePricesRepository.Dispose();
             
@@ -88,8 +88,8 @@ namespace Olimp
                 EventIdsListSingleton.AddId(olimpOdd.EventId);
             }
 
-            this._olimpPricesRepository.AddRange(prices);
-           
+            this._olimpPricesRepository.AddRange2(prices);
+            
             this._olimpPricesRepository.Dispose();
             
 

@@ -6,7 +6,9 @@ using Olimp.Dal.NewdatabaseClasses;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
-
+using Z.BulkOperations;
+using System.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 namespace Olimp.Dal.Repositories
 {
     public interface IOlimpPricesRepository
@@ -21,6 +23,7 @@ namespace Olimp.Dal.Repositories
         Task AddAsync(OlimpPrices pricesNew);
 
         void Delete(OlimpPrices pricesNew);
+        void AddRange2(List<OlimpPrices> prices);
 
         void Dispose();
         
@@ -36,6 +39,8 @@ namespace Olimp.Dal.Repositories
         Task<List<OlimpPrices>> GetAllAsync();
 
         Task AddRangeAsync(List<OlimpPrices> prices);
+
+        void AddRange2(List<OlimpPrices> prices);
         Task AddAsync(OlimpPrices pricesNew);
 
         void Delete(OlimpPrices pricesNew);
@@ -64,6 +69,7 @@ namespace Olimp.Dal.Repositories
 
         public void AddRange(List<OlimpPrices> prices)
         {
+           
             
             foreach(OlimpPrices olimpPrices in prices)
             {
@@ -74,6 +80,18 @@ namespace Olimp.Dal.Repositories
             
 
             
+        }
+
+        public void AddRange2(List<OlimpPrices> prices)
+        {
+
+
+            List<OlimpPrices> l = prices;
+            this._pricesContext.BulkInsert(l);
+           
+        
+                  
+              
         }
 
         public List<OlimpPrices> GetAll()
@@ -135,6 +153,12 @@ namespace Olimp.Dal.Repositories
           
         }
 
+        public void AddRange2(List<OlimpPrices> prices)
+        {
+            List<OlimpPrices> l = prices;
+            this._fullLineContext.BulkInsert(l);
+            
+        }
         public async Task AddRangeAsync(List<OlimpPrices> prices)
         {
             await this._fullLineContext.Prices.AddRangeAsync(prices);
